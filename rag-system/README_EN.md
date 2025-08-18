@@ -395,6 +395,87 @@ You are a professional Taiwan legal assistant. Please answer questions based on 
 - 📚 **Knowledge Integration**: Structured legal knowledge system establishment
 - 🔍 **Complete Traceability**: Provides complete legal article source traceability mechanisms
 
+
+## 📚 Learning Resources & References
+
+### 🎓 Core Technical Knowledge
+
+#### RAG (Retrieval-Augmented Generation) Related
+- **RAG Architecture Principles**: Basic concepts of Retrieval-Augmented Generation
+- **Vector Databases**: FAISS, Pinecone, Weaviate usage and comparison
+- **Text Embedding Techniques**: SentenceTransformers, OpenAI Embeddings
+- **Semantic Search**: Cosine similarity, approximate nearest neighbor search
+- **Prompt Engineering**: Prompt design and optimization techniques
+
+#### Natural Language Processing (NLP)
+- **Text Preprocessing**: Tokenization, cleaning, normalization
+- **Chinese Text Processing**: Traditional/Simplified conversion, word segmentation
+- **Semantic Understanding**: BERT, RoBERTa, multilingual models
+
+#### System Architecture & Development
+- **Microservice Architecture**: API design, service separation
+- **Web Development**: Flask, FastAPI, RESTful API
+- **Database Design**: Vector database index optimization
+- **Containerized Deployment**: Docker, Kubernetes
+
+### 🌐 Learning Websites & Resources
+
+#### Official Documentation & Tutorials
+- **FAISS Official Documentation**: [https://faiss.ai/](https://faiss.ai/)
+- **SentenceTransformers**: [https://www.sbert.net/](https://www.sbert.net/)
+- **Hugging Face Transformers**: [https://huggingface.co/docs/transformers](https://huggingface.co/docs/transformers)
+- **OpenAI API Documentation**: [https://platform.openai.com/docs](https://platform.openai.com/docs)
+- **Flask Official Tutorial**: [https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)
+
+#### RAG & Vector Search Topics
+- **LangChain Official Documentation**: [https://python.langchain.com/](https://python.langchain.com/)
+- **Pinecone Learning Center**: [https://www.pinecone.io/learn/](https://www.pinecone.io/learn/)
+- **Weaviate Academy**: [https://weaviate.io/developers/academy](https://weaviate.io/developers/academy)
+- **Llamaindex Documentation**: [https://docs.llamaindex.ai/](https://docs.llamaindex.ai/)
+
+#### Chinese NLP & Legal Document Processing
+- **Academia Sinica Chinese Word Segmentation**: [https://ckiplab.github.io/](https://ckiplab.github.io/)
+- **National Laws & Regulations Database**: [https://law.moj.gov.tw/](https://law.moj.gov.tw/)
+- **Taiwan AI Lab**: [https://ailabs.tw/](https://ailabs.tw/)
+- **Government Open Data Platform**: [https://data.gov.tw/](https://data.gov.tw/)
+
+#### Online Courses & Tutorials
+- **Coursera - NLP Specialization**: [https://www.coursera.org/specializations/natural-language-processing](https://www.coursera.org/specializations/natural-language-processing)
+- **DeepLearning.AI - Building Applications with Vector Databases**: [https://www.deeplearning.ai/short-courses/](https://www.deeplearning.ai/short-courses/)
+- **Fast.ai - Practical Deep Learning**: [https://course.fast.ai/](https://course.fast.ai/)
+- **Hugging Face Course**: [https://huggingface.co/course](https://huggingface.co/course)
+
+#### Development Tools & Platforms
+- **Google Colab**: [https://colab.research.google.com/](https://colab.research.google.com/) - Free GPU environment
+- **Jupyter Notebook**: [https://jupyter.org/](https://jupyter.org/) - Interactive development environment
+- **Streamlit**: [https://streamlit.io/](https://streamlit.io/) - Rapid web app development
+- **Gradio**: [https://gradio.app/](https://gradio.app/) - Machine learning model interfaces
+
+### 📖 Recommended Papers
+
+#### RAG Core Papers
+- **RAG: Retrieval-Augmented Generation** (Lewis et al., 2020)
+- **Dense Passage Retrieval** (Karpukhin et al., 2020)
+- **Retrieval-Augmented Generation for Large Language Models** (Guu et al., 2020)
+
+#### Vector Retrieval Technology
+- **Efficient and Robust Approximate Nearest Neighbor Search** (Johnson et al., 2019)
+- **Learning Dense Representations for Entity Retrieval** (Yamada et al., 2016)
+
+#### Multilingual Text Embeddings
+- **Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks** (Reimers & Gurevych, 2019)
+- **Making Monolingual Sentence Embeddings Multilingual** (Reimers & Gurevych, 2020)
+
+### 🛠️ Practice Recommendations
+
+1. **Start Small**: Practice vectorization with 100-200 regulations first
+2. **Try Different Models**: Compare different text embedding model effects
+3. **Optimize Retrieval Parameters**: Adjust top_k, similarity thresholds, etc.
+4. **Build Evaluation Mechanisms**: Design Q&A pairs to evaluate system performance
+5. **Integrate Different LLMs**: Try OpenAI, Claude, open-source models
+6. **Performance Optimization**: Test and optimize system response speed
+7. **User Experience**: Design user-friendly frontend interfaces
+
 ## 📄 License
 
 本專案採用 CC-BY-NC 授權，歡迎學習與非商業使用。

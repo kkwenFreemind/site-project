@@ -266,6 +266,86 @@ def _generate_ai_answer(self, query: str, relevant_laws: List[Dict[str, Any]]) -
 
 
 
+## 📚 學習資源與參考文獻 | Learning Resources & References
+
+### 🎓 核心技術知識點 | Core Technical Knowledge
+
+#### RAG (檢索增強生成) 相關
+- **RAG 架構原理**：Retrieval-Augmented Generation 基本概念
+- **向量資料庫**：FAISS、Pinecone、Weaviate 使用與比較
+- **文本嵌入技術**：SentenceTransformers、OpenAI Embeddings
+- **語意檢索**：餘弦相似度、近似最鄰居搜尋
+- **Prompt Engineering**：提示詞設計與優化技巧
+
+#### 自然語言處理 (NLP)
+- **文本預處理**：分詞、清理、標準化
+- **中文文本處理**：繁簡轉換、斷詞技術
+- **語意理解**：BERT、RoBERTa、多語言模型
+
+#### 系統架構與開發
+- **微服務架構**：API 設計、服務分離
+- **Web 開發**：Flask、FastAPI、RESTful API
+- **資料庫設計**：向量資料庫索引優化
+- **容器化部署**：Docker、Kubernetes
+
+### 🌐 學習網站與資源 | Learning Websites & Resources
+
+#### 官方文檔與教學
+- **FAISS 官方文檔**：[https://faiss.ai/](https://faiss.ai/)
+- **SentenceTransformers**：[https://www.sbert.net/](https://www.sbert.net/)
+- **Hugging Face Transformers**：[https://huggingface.co/docs/transformers](https://huggingface.co/docs/transformers)
+- **OpenAI API 文檔**：[https://platform.openai.com/docs](https://platform.openai.com/docs)
+- **Flask 官方教學**：[https://flask.palletsprojects.com/](https://flask.palletsprojects.com/)
+
+#### RAG 與向量搜尋專題
+- **LangChain 官方文檔**：[https://python.langchain.com/](https://python.langchain.com/)
+- **Pinecone Learning Center**：[https://www.pinecone.io/learn/](https://www.pinecone.io/learn/)
+- **Weaviate Academy**：[https://weaviate.io/developers/academy](https://weaviate.io/developers/academy)
+- **Llamaindex 文檔**：[https://docs.llamaindex.ai/](https://docs.llamaindex.ai/)
+
+#### 中文 NLP 與法規處理
+- **中研院中文斷詞系統**：[https://ckiplab.github.io/](https://ckiplab.github.io/)
+- **全國法規資料庫**：[https://law.moj.gov.tw/](https://law.moj.gov.tw/)
+- **台灣 AI Lab**：[https://ailabs.tw/](https://ailabs.tw/)
+- **政府資料開放平臺**：[https://data.gov.tw/](https://data.gov.tw/)
+
+#### 線上課程與教學
+- **Coursera - NLP Specialization**：[https://www.coursera.org/specializations/natural-language-processing](https://www.coursera.org/specializations/natural-language-processing)
+- **DeepLearning.AI - Building Applications with Vector Databases**：[https://www.deeplearning.ai/short-courses/](https://www.deeplearning.ai/short-courses/)
+- **Fast.ai - Practical Deep Learning**：[https://course.fast.ai/](https://course.fast.ai/)
+- **Hugging Face Course**：[https://huggingface.co/course](https://huggingface.co/course)
+
+#### 開發工具與平台
+- **Google Colab**：[https://colab.research.google.com/](https://colab.research.google.com/) - 免費 GPU 環境
+- **Jupyter Notebook**：[https://jupyter.org/](https://jupyter.org/) - 互動式開發環境
+- **Streamlit**：[https://streamlit.io/](https://streamlit.io/) - 快速建立 Web 應用
+- **Gradio**：[https://gradio.app/](https://gradio.app/) - 機器學習模型介面
+
+### 📖 推薦閱讀論文 | Recommended Papers
+
+#### RAG 核心論文
+- **RAG: Retrieval-Augmented Generation** (Lewis et al., 2020)
+- **Dense Passage Retrieval** (Karpukhin et al., 2020)
+- **Retrieval-Augmented Generation for Large Language Models** (Guu et al., 2020)
+
+#### 向量檢索技術
+- **Efficient and Robust Approximate Nearest Neighbor Search** (Johnson et al., 2019)
+- **Learning Dense Representations for Entity Retrieval** (Yamada et al., 2016)
+
+#### 多語言文本嵌入
+- **Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks** (Reimers & Gurevych, 2019)
+- **Making Monolingual Sentence Embeddings Multilingual** (Reimers & Gurevych, 2020)
+
+### 🛠️ 實作練習建議 | Practice Recommendations
+
+1. **從小規模開始**：先用 100-200 條法規練習向量化
+2. **嘗試不同模型**：比較不同的文本嵌入模型效果
+3. **優化檢索參數**：調整 top_k、相似度閾值等參數
+4. **建立評測機制**：設計問答對來評估系統效果
+5. **整合不同 LLM**：嘗試 OpenAI、Claude、開源模型
+6. **效能優化**：測試並優化系統回應速度
+7. **使用者體驗**：設計友善的前端介面
+
 ## 📄 授權條款 | License
 
 本專案採用 CC-BY-NC 授權，歡迎學習與非商業使用。
