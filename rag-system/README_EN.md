@@ -411,15 +411,7 @@ This project is licensed under CC-BY-NC, welcome for learning and non-commercial
 ✨ If this project helps you, please give us a Star ⭐ to support!
 This not only encourages me, but also helps more people discover this project and exchange RAG applications together 🙌
 
-## 🤝 Contributing
 
-Welcome to submit Issues and Pull Requests!
-
-### Development Process
-1. Fork the project
-2. Create feature branch
-3. Submit changes
-4. Create Pull Request
 
 ---
 
