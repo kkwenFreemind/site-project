@@ -2,7 +2,13 @@
 
 <div align="center">
 
-**⭐ Please give us a Star | 請幫忙點星星 ⭐**
+## ⭐ Support the Project
+
+✨ 如果覺得這個專案對你有幫助，請幫我點個 Star ⭐ 支持一下！  
+這不只是鼓勵我，還能讓更多人看到這個專案，一起交流 RAG 的應用 🙌
+
+✨ If this project helps you, please give us a Star ⭐ to support!  
+This not only encourages me, but also helps more people discover this project and exchange RAG applications together 🙌
 
 **🌍 Multi-language | 多語言版本**
 
