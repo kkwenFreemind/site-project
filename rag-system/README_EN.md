@@ -9,6 +9,14 @@
 
 </div>
 
+---
+
+## 🖼️ User Interface Screenshot
+
+![RAG Knowledge Base Project UI](RAG%20%E7%9F%A5%E8%AD%98%E5%BA%AB%E5%B0%88%E6%A1%88.png)
+
+---
+
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com)
 [![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-orange.svg)](https://github.com/facebookresearch/faiss)

@@ -9,6 +9,14 @@
 
 </div>
 
+---
+
+## 🖼️ 使用者介面截圖 | User Interface Screenshot
+
+![RAG 知識庫專案使用者介面](RAG%20%E7%9F%A5%E8%AD%98%E5%BA%AB%E5%B0%88%E6%A1%88.png)
+
+---
+
 > 本系統基於 RAG (檢索增強生成) 架構，結合向量資料庫檢索技術與大型語言模型整合，提供精確法規檢索與智慧問答服務。
 
 > This system is based on RAG (Retrieval-Augmented Generation) architecture, integrating vector database retrieval technology and large language model support, providing precise legal regulation search and intelligent Q&A services.
