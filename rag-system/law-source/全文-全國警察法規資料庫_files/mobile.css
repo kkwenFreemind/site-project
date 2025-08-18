@@ -1,0 +1,154 @@
+@media (max-width: 1200px) {
+.container {max-width:100%;}
+.searchZone .date {margin-bottom:1em;}
+.law-search {width:100%;}
+.footer-main {display:block;}
+.footer-main .logo-box{padding-right:0; display:inline-block;}
+}
+@media (max-width: 992px) {
+main {min-height:auto;}
+/*.law-search .items div {width: calc(100%/5);}*/
+.fatfooter ul,
+.visitors {font-size:1em; flex-wrap: wrap; width:100%;}
+/* 法規瀏覽 */
+.tab-lawview th:nth-child(2),
+.tab-lawview td:nth-child(2) {display:none;}
+.tab-lawview .btnDataZone {display:none;}
+.tab-list > thead .btnDataZone {right:30px;}
+.law-reg-content {width:100%;}
+.law-file-content,
+.tab-filelist {width:85%;}
+.news-content .text-pre {margin-left:0em;}
+/* 全文檢索欄位說明 */
+.law-help {display:block;}
+.footer-con .container {display:block;}
+.Accessibility {text-align:left; margin-top:.5em;}
+.copyrights .container {display:block; text-align:center;}
+.copyrights .visitors {text-align:center; margin-top:.5em;}
+}
+
+@media (max-width: 768px) {
+#AU, #AC, #AZ {display:none;}
+header {padding:.5em 0;}
+header .logo IMG{width:250px; height:57px;}
+.top-menu {margin-top:.5em;}
+.top-menu .nav-item .nav-link,
+.menu-nav .nav-item .nav-link {
+	margin:2px auto;
+	color:#fff;
+	font-size:1em;
+	font-weight:bold;
+	padding: .6rem;
+	text-align:center;
+	font-size:1.25em;
+}
+.top-menu .nav-item .nav-link:after {display:none;}
+.top-menu .nav-item .nav-link {background-color:rgba(0,0,0,0.4);border:rgba(11,72,11,0.9) 1px solid;}
+.top-menu .nav-item:last-child .nav-link {margin-right:0;}
+.top-menu .nav-item .nav-link:hover {color:#fff;}
+.menu-nav .nav-item .nav-link,
+.menu-nav .nav-item .nav-link:hover {background-color:rgba(0,0,0,0.7);}
+.menu {background-color:transparent;}
+.menu-nav {margin-bottom:1.2em;}
+.left {padding-right:15px;}
+/*.searchZone .date {flex-wrap:wrap;}*/
+.searchZone .form-control {display:inline-block; margin-top:.5rem;}
+.searchZone label {display:inline-block;}
+.searchZone .date {display:block;}
+.searchZone .search {display:block; text-align:center;}
+.searchZone .date-group {display:block;}
+.searchZone .th {background-color:#ffeed8; padding-left:1.6em; margin-bottom:.5em; display:block; text-align:left;}
+.searchZone .th:after {left:10px;}
+.searchZone .memo {display:block; margin-top:.5rem;}
+.searchZone .date label {width:10vw; text-align:center;}
+.searchZone .date .form-control {width:70vw;}
+.searchZone .search .form-control {width:calc(90vw - 30px);}
+.searchZone .btn{display:block; width:30%; margin:1rem auto 0 auto; border:0;}
+.law-search .row {background:none; padding-top:0; padding-bottom:2em;}
+.law-search .row:last-child {padding-bottom:0;}
+.law-search .items div {width:auto;}
+.law-search .col-form-label {background-color:#ffeed8; padding-left:1.6em; margin-bottom:.5em;}
+.law-search .col-form-label:after {left:10px;}
+.law-search .col-form-label .memo {display:inline-block; margin-left:0;}
+.law-search .date-group {display:block;}
+.law-search .date-group label {width:10vw; text-align:center;}
+.law-search .date-group .form-control {width:70vw; margin-bottom:.5rem;}
+.law-search .keyword .form-control {display:inline-block; width:calc(70vw - 30px);}
+.law-search .law-no .form-control {display:inline-block; width:calc(50vw - 30px);}
+.law-reg-content .search {width:100%;}
+.law-reg-content .search .th {width:100%;}
+
+/* 附件附表 */
+.law-file-content,
+.tab-filelist {width:100%;}
+.law-file-content .row .col-th {text-align:left;}
+.tab-filelist tr,
+.tab-filelist th,
+.tab-filelist td {display:block; padding:0;}
+.tab-filelist tr {margin-bottom:1em;}
+.tab-filelist th {text-align:left;}
+.tab-filelist .file-list {margin-left: 1.5em;}
+/* 最新訊息內容 */
+.news-content .text-pre,
+.news-content .ContentArea {margin-left: 0; padding:10px 5px;}
+.news-content .text-pre {font-size:0.8125em;}
+/* 條文 */
+.law-header .row .col-th {width:4em; text-align:left;}
+.law-header .card-body {padding:.25rem;}
+.law-header .card-footer {padding:.45rem .25rem;}
+/*.law-content {box-shadow:none !important; border:none;}*/
+/*.law-reg-content {padding:.25rem;}*/
+.law-content .row {display:block; margin-right:0; margin-left:0;}
+.law-content .row > .col-no,
+.law-content .row > .col-fun,
+.law-content .row > .col-fun2,
+.law-content .row > .col-data {display:block;}
+.law-content .row > .col-no{padding-right:0;text-align:left;}
+.law-header .card-footer .nav li { margin-top:.35rem; margin-bottom:.35rem;}
+/*.law-content .row > .col-fun {padding-right:.5rem;}
+.law-content .row > .col-fun2 {padding-right:.5rem;}*/
+/*.law-content .row > .col-data{overflow:auto;}*/
+/* 表格 清單 */
+.tab-list th,
+.tab-list td {padding-right:.35rem; padding-left:.35rem;}
+/* 法規瀏覽 */
+.tab-lawview th:nth-child(1) {text-align:center; width:5%;}
+.tab-lawview th:nth-child(3) {text-align:center; width:5%;}
+.tab-lawview th:nth-child(4) {text-align:center; width:12%;}
+.tab-lawview th:nth-child(5) {text-align:left; width:78%;}
+/* 工具列 */
+.law-tool{
+	display:block;
+	position:relative;
+	top:0;
+	right:0;
+	padding-top:0;
+}
+.sitemap .hotkey strong {display:block;}
+.footer-main .logo-box {display:block;}
+.footer-main .logo-box .qrcode {width:300px; margin:.5em auto;}
+.footer-main,
+.copyrights .container,
+.copyrights .visitors {font-size:0.8125em;}
+.copyrights .links a {margin-right:1em;}
+.copyrights .links a:after {position:absolute; content:"|"; right:-10px;}
+.btn-printer {display:none;}
+.hidden-xs {display:none;}
+.pageZone {
+	flex-wrap:wrap;
+}
+}
+
+@media (max-width: 670px){
+.news-content .text-pre {font-size:0.625em;} 
+}
+
+@media (max-width: 576px) {
+.visitors .items i { display:none;}
+.visitors .items div {margin-left:0;}
+.law-content .text-pre {font-size:0.625em;}
+}
+
+
+
+

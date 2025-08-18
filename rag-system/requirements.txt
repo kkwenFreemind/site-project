@@ -1,0 +1,83 @@
+# ============================================================================
+# RAG Legal Q&A System - Dependencies
+# 法規智能問答系統 - 依賴套件
+# ============================================================================
+
+# Core Web Framework | 核心 Web 框架
+flask>=2.0.0
+flask-cors>=4.0.0
+
+# Vector Search and Embeddings | 向量檢索與嵌入
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.0
+numpy>=1.21.0
+
+# Data Processing | 資料處理
+beautifulsoup4>=4.11.0
+lxml>=4.9.0
+requests>=2.28.0
+pandas>=1.5.0
+
+# System and Utilities | 系統與工具
+pathlib2>=2.3.0  # For older Python versions
+typing-extensions>=4.0.0  # For enhanced typing support
+
+# ============================================================================
+# Optional Dependencies | 可選依賴
+# Uncomment the sections you need | 取消註解您需要的部分
+# ============================================================================
+
+# OpenAI Integration | OpenAI 整合
+# openai>=1.0.0
+
+# Hugging Face Transformers (Local LLM) | 本地 LLM
+# transformers>=4.30.0
+# torch>=2.0.0
+
+# Anthropic Claude Integration | Anthropic Claude 整合  
+# anthropic>=0.7.0
+
+# Google AI Integration | Google AI 整合
+# google-generativeai>=0.3.0
+
+# Local Ollama Integration | 本地 Ollama 整合
+# ollama>=0.1.0
+
+# ============================================================================
+# Development Dependencies | 開發依賴
+# Only needed for development | 僅開發時需要
+# ============================================================================
+
+# Testing | 測試
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+
+# Development Tools | 開發工具
+# jupyter>=1.0.0
+# notebook>=6.5.0
+
+# Code Quality | 程式碼品質
+# black>=22.0.0
+# flake8>=5.0.0
+# mypy>=1.0.0
+
+# ============================================================================
+# Installation Instructions | 安裝說明
+# ============================================================================
+#
+# Basic installation | 基本安裝:
+#   pip install -r requirements.txt
+#
+# With OpenAI support | 包含 OpenAI 支援:
+#   pip install -r requirements.txt openai
+#
+# With local LLM support | 包含本地 LLM 支援:
+#   pip install -r requirements.txt transformers torch
+#
+# Full development setup | 完整開發環境:
+#   pip install -r requirements.txt pytest jupyter black
+#
+# Dependency check | 依賴檢查:
+#   python check_dependencies.py
+#
+# ============================================================================

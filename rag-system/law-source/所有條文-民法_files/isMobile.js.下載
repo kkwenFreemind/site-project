@@ -1,0 +1,114 @@
+﻿function setCookie_trans() {
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + 1);
+    document.cookie = 'toV=;expires=' + new Date(-1).toUTCString();//刪除
+	document.cookie = "toV=M;path=/;domain=legal.judicial.gov.tw;expires=" + exdate.toGMTString();
+    //alert(document.cookie);
+    return true;
+}
+function setCookiePC_trans() {
+    var exdate = new Date()
+    exdate.setDate(exdate.getDate() + 1);
+    document.cookie = 'toV=;expires=' + new Date(0).toUTCString();//刪除
+    document.cookie = "toV=PC;path=/;domain=legal.judicial.gov.tw;expires=" + exdate.toGMTString();
+    //alert(document.cookie);
+    return true;
+}
+function delCookies() {
+    var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+    if (keys) {
+        for (var i = keys.length; i--;)
+            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString();
+    }
+}
+function isMoblie() {
+    check = false;
+    val = getCookie_m("toV");
+    if(val!=null && val!="" )
+    {
+        if (val=="M")//至行動版
+            check=false;
+        else
+            check=true;
+    }
+    //c_name = 'toversion';
+    //if (document.cookie.length > 0) {
+    //    c_start = document.cookie.indexOf(c_name + "=")
+    //    if (c_start != -1) {
+    //        check = true;//至pc版
+    //    }
+    //}
+    return check;
+}
+function getCookie_m(name) {
+    var arg = escape(name) + "=";
+    var nameLen = arg.length;
+    var cookieLen = document.cookie.length;
+    var i = 0;
+    while (i < cookieLen) {
+        var j = i + nameLen;
+        if (document.cookie.substring(i, j) == arg) return getCookieValueByIndex(j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if (i == 0) break;
+    }
+    return null;
+}
+function getCookieValueByIndex(startIndex) {
+    var endIndex = document.cookie.indexOf(";", startIndex);
+    if (endIndex == -1) endIndex = document.cookie.length;
+    return unescape(document.cookie.substring(startIndex, endIndex));
+}
+function checkMobile() {
+    if (!isMoblie()) {
+        var path = "";
+        var stayPC = "0";
+        var curPath = location.pathname.toUpperCase();
+        switch (location.pathname.substr(1, 4).toUpperCase()) {
+            case "FLAW":
+                path = "/FLAW/data.aspx" + location.search;
+                if (curPath.indexOf("DAT02") > -1 && location.search.toUpperCase().indexOf("BP") == -1)//全文
+                    path = "FLAW/data.aspx" + location.search;
+                else if (location.pathname.indexOf("DAT02") > -1)//編章節
+                    path = location.pathname + location.search;
+                else if (curPath.indexOf("DEFAULT_AD") > -1)//進階查詢
+                    path = "FLAW/default.aspx";
+                else if (curPath.indexOf("FLAW/QRYRESULT") > -1)
+                    stayPC = "1";
+                else
+                    path = location.pathname + location.search;
+
+                //else if (location.pathname.indexOf("DAT01") > -1)//沿革
+                //    path = location.pathnam + location.search;
+                //else if (location.pathname.indexOf("DAT03") > -1)//編章節
+                //    path = location.pathname + location.search;
+                //else if (location.pathname.indexOf("QRYNORESULT") > -1)//查詢
+                //    path = location.pathname + location.search;
+                //else if (location.pathname.indexOf("DAT07") > -1)//修正條文
+                //    path = location.pathname + location.search;
+                break;
+            case "FINT":
+                if (curPath.indexOf("DEFAULT_AD") > -1)//進階查詢
+                    path = "FINT/default.aspx";
+                else if (curPath.indexOf("FINT/QRYRESULT") > -1)
+                    stayPC = "1";
+                else
+                    path = location.pathname + location.search;
+                break;
+            case "FEXE":
+                if (curPath.indexOf("DEFAULT_AD") > -1)//進階查詢
+                    path = "FINT/default.aspx";
+                else
+                    path = location.pathname.replace("FEXE", "FINT") + location.search;
+                break;
+        }
+        //alert(path);
+        if (stayPC == "0")
+        location.href = 'https://legal.judicial.gov.tw/LAW_Mobile_FLAW/' + path;
+        else
+            setCookiePC_trans();
+        //if (confirm('偵測到您正在使用手機瀏覽網頁，是否以行動版瀏覽本站?'))
+        //{ delCookies(); location.href = 'https://judicial-out.lawbank.com.tw/LAW_Mobile/'; }
+        //else
+        //{ document.cookie = 'isMoblie=0'; }
+    }
+}

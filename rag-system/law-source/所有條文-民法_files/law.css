@@ -1,0 +1,271 @@
+﻿/* PRE */
+.text-pre {
+    white-space: pre;
+    font-family: "細明體";
+    line-height: 180%;
+}
+/* 法規基本資料 */
+.law-header {
+	width: 100%;
+	padding: 1em 2em;
+	margin: 0px auto 16px auto;
+	line-height: 180%;
+	overflow: hidden;
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #f3f0ea 100%);
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f3f0ea 100%);
+	background: linear-gradient(to bottom, #ffffff 0%, #f3f0ea 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f0ea', GradientType=0 );
+	border: #dfd7cc 1px solid;
+	box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-webkit-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-moz-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-o-box-shadow: 2px 2px 8px -3px #AAAAAA;
+}
+.law-header .row {
+	margin: 0 !important;
+	clear: both;
+}
+.law-header .col-th {
+	float: left;
+	min-width: 5em;
+	max-width: 6em;
+	font-weight: 800;
+	white-space: nowrap;
+}
+.law-header .col-td {
+	float: none;
+	width: auto;
+	overflow: hidden;
+}/*自動縮放寬度*
+
+/* 功能按鈕 */
+.law-buttons {
+	margin: 1em 0 0 0;
+	width: 100%;
+	text-align: center;
+}
+.law-buttons .btn {
+	padding: 6px 7px;
+}
+.law-buttons .btn-default {
+	font-family: "微軟正黑體";
+	font-weight: 800;
+	border-color: #eea236;
+	background: #ffed9a;
+	background: -moz-linear-gradient(top, #ffed9a 0%, #ffd59a 100%);
+	background: -webkit-linear-gradient(top, #ffed9a 0%, #ffd59a 100%);
+	background: linear-gradient(to bottom, #ffed9a 0%, #ffd59a 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffed9a', endColorstr='#ffd59a', GradientType=0 );
+}
+.law-buttons .btn-default:hover {
+	border-color: #eea236;
+	background: #ffed9a;
+	color: #df5a02;
+}
+.law-buttons .active {
+	background: #ffd59a;
+	background: -moz-linear-gradient(top, #ffd59a 0%, #ffed9a 100%);
+	background: -webkit-linear-gradient(top, #ffd59a 0%, #ffed9a 100%);
+	background: linear-gradient(to bottom, #ffd59a 0%, #ffed9a 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd59a', endColorstr='#ffed9a', GradientType=0 );
+}
+/*** 法規沿革 開始 ***/
+.law-history {
+	list-style-type: none;
+	padding: 0em 2em 1.5em 2em;
+	margin: 0 auto 16px auto;
+	background: #ffffff;
+	border: #dfd7cc 1px solid;
+	box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-webkit-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-moz-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-o-box-shadow: 2px 2px 8px -3px #AAAAAA;
+}
+.law-history li {
+	padding: 1.5em 8px 0 8px;
+}
+.law-history li .Funs {
+	margin: 8px 0 0 0;
+	font-weight: 800;
+	color: #808080;
+	background-color: rgba(140,60,0,0.05);
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 8px 8px 8px 2em;
+}
+.law-history li:hover {
+	color: #000;
+}
+.law-history li .Funs a, .law-history li .Funs span {
+	padding: 2px 6px;
+	font-family: "微軟正黑體";
+	margin-right: 8px;
+	border: 1px dashed #bbbbbb;
+	border-radius: 15px;
+}
+.law-history li .Funs a {
+	color: #0e7e6f;
+	text-decoration: none;
+	border: 1px dashed #0e7e6f;
+}
+.law-history li .Funs a:hover {
+	background-color: #0e7e6f;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.law-history li:hover .Funs {
+	background-color: rgba(140,60,0,0.08)
+}
+p.hover {
+	margin: 0 0 0.5em 0;
+	padding: 0
+}
+p.hover:hover {
+	color: #000;
+}
+/*** 法規沿革 結束 ***/
+
+
+/*** 條文 開始 ***/
+.law-content {
+	width: 100%;
+	padding: 1.5em 2em;
+	margin: 0 auto 16px auto;
+	background: #ffffff;
+	border: #dfd7cc 1px solid;
+	box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-webkit-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-moz-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-o-box-shadow: 2px 2px 8px -3px #AAAAAA;
+}
+.law-content > .row {
+	margin: 0;
+	padding: 8px 0;
+	border-bottom: 1px dotted #bbbbbb;
+	overflow: hidden;
+}
+.law-content > .row:last-child {
+	border-bottom: none;
+}
+.law-content > .row:hover {
+	color: #000;
+}
+.law-content > .row > .col-no {
+	float: left;
+	width: 8em;
+	white-space: nowrap;
+	padding-right: 8px;
+	line-height: 170%;
+}
+.law-content > .row > .col-data {
+	float: none;
+	width: auto;
+	overflow: hidden;
+}/*自動縮放寬度*/
+.law-content .file-list {margin-top:1em; line-height:170%;}
+@media (max-width:900px) {
+.col-xs-9 .law-content, .col-xs-9 #law_accordion .panel-default {
+	width: 103% !important;
+}
+}
+/* 編章節 */
+.law-content h3{font-size:1em;margin:0;padding:8px 0;border-bottom:1px dotted #bbbbbb;font-weight:800;}
+.law-content h3.char-2{padding-left:3em;}
+.law-content h3.char-3{padding-left:6em;}
+.law-content h3.char-4{padding-left:9em;}
+.law-content h3.char-5{padding-left:12em;}
+.law-content h3.char-6{padding-left:15em;}
+
+/* 未生效說明 */
+.panel-valid {
+	margin-top: 18px;
+	border-color: #ffdf93;
+	border-width: 2px;
+	border-radius: 0;
+	position: relative;
+}
+.panel-valid:after {
+	position: absolute;
+	content: "";
+	width: auto;
+	height: auto;
+	border-style: solid;
+	border-color: transparent transparent #ffdf93 transparent;
+	border-width: 18px 16px;
+	left: 7px;
+	top: -38px;
+}
+.panel-valid .panel-heading {
+	background-color: #ffdf93;
+	border-color: #ffdf93;
+	color: #900404;
+	border-radius: 0;
+}
+/*** 條文 結束 ***/
+
+
+/*** 附件圖表 開始 ***/
+.lawfile-list {
+	width: 100%;
+	padding: 1.5em 2em;
+	margin: 0 auto 16px auto;
+	background: #ffffff;
+	border: #dfd7cc 1px solid;
+	box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-webkit-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-moz-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-o-box-shadow: 2px 2px 8px -3px #AAAAAA;
+}
+.lawfile-list li {
+	line-height: 170%;
+	padding: 0;
+}
+.lawfile-list ol {
+	list-style-type: decimal-leading-zero;
+}
+.lawfile-list li a {
+	text-decoration: none;
+}
+.lawfile-list li li:hover {
+	background-color: #e3f1eb;
+}
+.lawfile-list li li:hover a {
+	color: #23527c;
+}
+.lawfile-list > li {
+	list-style-type: none;
+}
+.lawfile-list >ul > li> ol {
+	margin-left: 2em;
+}
+/*** 附件圖表 結束 ***/
+
+
+/*** 條文檢索/條號查詢 開始 ***/
+.law-search-area {
+	width: 100%;
+	letter-spacing: 1pt;
+	margin: 1.5em auto;
+	padding: 1.5em 7em;
+	background-color: #f3f0ea;
+	border: solid 1px #dfd7cc;
+	color: #43484c;
+	box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-webkit-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-moz-box-shadow: 2px 2px 8px -3px #AAAAAA;
+	-o-box-shadow: 2px 2px 8px -3px #AAAAAA;
+}
+.law-search-area .btn {
+	font-family: "微軟正黑體";
+	font-weight: 800;
+	letter-spacing: normal;
+}
+.law-search-area dl {
+	columns: 2;
+	-webkit-columns: 2;
+	-moz-columns: 2;
+	margin: 1em 0 0 0;
+}
+/*** 條文檢索/條號查詢 結束 ***/

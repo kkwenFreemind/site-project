@@ -1,0 +1,91 @@
+﻿/* 20200703 處理手機版顯示條文內容有表格的內容時跑版的問題 */
+@font-face {
+    font-family: tablefont;
+    src: url(../fonts/table.woff), 
+        url(../fonts/table.ttf), 
+        url(../fonts/table.eof);
+}
+
+/* 條文 */
+.law-content .row {padding:8px 0; overflow:hidden; display:block;}
+.law-content .row:last-child{border-bottom:none;}
+.law-content .row:hover{color:#000;}
+.law-content .row > .col-no{float:left;width:8em;white-space:nowrap;padding-right:8px;line-height: 170%;text-align:right;margin-right: 1em;}
+.law-content .row > .col-fun{float:left;width:12em;white-space:nowrap;padding-right:8px;line-height: 170%;}
+.law-content .row > .col-fun2 {float: left;width: 19em;white-space: nowrap;padding-right: 8px;line-height: 170%;}
+.law-content .row > .col-data{float:none;width:auto;/*width:78%;*//*overflow:hidden;*/overflow:auto; padding-right:0;}/*自動縮放寬度*/
+.law-content .row > .col-data > .text-danger{padding-left: 2em;}
+@media print {
+.law-content .row {display:table;}
+.law-content .row > .col-no , .law-content .row > .col-data{display:table-cell; vertical-align:top; line-height: 170%;}
+/*.law-content .row > .col-data{float:right; width:34em;}*/
+}
+
+/* 編章節 */
+/*.law-content h3{font-size:1em;margin:0;padding:8px 0; font-weight:800;text-align:left;}
+.law-content h3.char-2{padding-left:3em;}
+.law-content h3.char-3{padding-left:6em;}
+.law-content h3.char-4{padding-left:9em;}
+.law-content h3.char-5{padding-left:12em;}
+.law-content h3.char-6{padding-left:15em;}*/
+.law-content .h3{font-size:1em; margin:0; padding:8px 0; font-weight:800; text-align:left; line-height:130%; text-indent:-4.5em; margin-left:4.5em;}
+.law-content .char-2{padding-left:3em;}
+.law-content .char-3{padding-left:6em;}
+.law-content .char-4{padding-left:9em;}
+.law-content .char-5{padding-left:12em;}
+.law-content .char-6{padding-left:15em;}
+
+/* 沿革 */
+.law-history .row {border-bottom:1px dotted #367979;}
+.btnNowOrHistory {float:left; margin-right:40px;}
+
+/* 條文內容 */
+.text-pre {white-space: pre;font-family: "細明體",tablefont;line-height: 180%;}
+
+
+
+/* 司法解釋 */
+.jud-content .row {margin-bottom:0.3em; display:block;}
+.jud-content .row .col-th {float:left; width:5em; margin:0px;padding:0;text-align: right; white-space:nowrap;}
+.jud-content .row .col-td {float:none;width:auto; /*margin-left: 5em;*/margin-left: 4.3em;}/*自動縮放寬度*/
+/*.jud-content .row .col-td .fa {display:inline;}*/
+.jud-content .text-pre {/*margin-left: 5.3em;*/margin-left: 4.3em;}
+.jud-extent {width:60%;	margin:0 auto;}
+.jud-extent .row {margin-bottom:0.3em; display:block;}
+.jud-extent .row .col-th {float:left; width:5em; margin:0px;padding:0;text-align: right; white-space:nowrap;}
+.jud-extent .row .col-td {float:none;width:auto; /*margin-left: 5em;*/margin-left: 4.3em;}/*自動縮放寬度*/
+/*.jud-extent .row .col-td .fa {display:inline;}*/
+.jud-extent .text-pre {margin-left: 5.3em;}
+.jud-extent .text-ex {width:100%; margin:0 0 0 -.6em;}
+
+/* 加入個人資料夾 */
+.folder-menu {position: absolute;z-index: 2;width: 18em;padding: 0.5em 1em;background-color: #dfedff;border: solid 1px #1358b6;box-shadow: 4px 4px 4px #aabdd6; right:0;}
+.folder-menu ul{margin: 0 0 1em 0;padding: 0;list-style-type: none;white-space: nowrap;max-height: 16em;overflow-y: auto;background-color:#FFF;padding:0.5em;}
+.folder-menu label {font-weight:normal; margin-bottom: 5px;}
+.folder-menu li:hover{background-color:#f8f8f8;}
+.folder-menu .input-group-btn{font-size:initial !important;}
+.folder-menu .input-group-btn .btn-default{font-size:1.5rem;}
+.folder-menu-buttons{padding:0 0 8px 0;}
+.folder-menu-buttons hr {margin: 0.5em 0;}
+
+/* 編輯資料夾 */
+.folder-editarea a.btn {
+	display: inline-block !important;
+	color:#333 !important;
+	font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+	background-color: #fff;
+    border-color: #ccc;
+}
+.folder-editarea a:hover.btn {background-color:#FFF; border-color:#148383;color:#333 !important;}
+
+
+/* 去32個整段的條文樣式 */
+.law-article {counter-reset: num;padding-left: 2em;width:90%;}
+.law-article + .ValidContent {margin-left: 2em;}
+.law-article div {position: relative;margin-bottom: 0.5em;}
+.law-article div.show-number::before {counter-increment: num;content: counter(num);display: inline-block;position: absolute;left: -3em;margin-left: -1em;text-align: right;width: 3em;font-family: Consolas;font-size:1.05em;font-style:italic;color:#666;}
+.law-article div.show-number.long-width::before {left: -5em;}
+.law-article .lawno-style {background-color: #f5f5f5;border-radius: 4px;padding: 2px;font-family: "微軟正黑體";font-weight: 800;font-size: 12px;color: #0560d0;}
+.law-article .style-error{color:#990000;background-color:#fcb6b6;}

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width"><meta name="Description" content="歡迎使用全國法規資料庫網站，本網站提供各界經由網際網路單一窗口簡單、方便、公開查詢法規資料及各機關法規網站，以達有效管理及公開法令資訊，建構法治社會之目標。"><meta property="og:image" content="https://law.moj.gov.tw/images/FBLogo.png"><title>
+	行政執行法施行細則-全國法規資料庫
+</title>
+    <!--[if lt IE 9]><script src="/js/html5shiv.min.js"></script><![endif]-->
+    <link href="https://law.moj.gov.tw/favicon.png" rel="icon" type="image/png"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/bootstrap-icons.min.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/font-awesome.min.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/layout.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/table.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/mobile.css" rel="stylesheet" type="text/css"><link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/autocomplete.css" rel="stylesheet">
+    
+    <link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/tinybox.css" rel="stylesheet" type="text/css" media="screen">
+    <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/tinybox.js"></script>
+    <script type="text/javascript" src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/jquery-ui.min.js"></script>
+    
+    <link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link href="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/law.css" rel="stylesheet">
+<style type="text/css">.line-0000 {margin-left: 1em; text-indent: -0em;}
+.line-0004 {margin-left: 3em; text-indent: -2em;}
+</style>
+    <script type="text/javascript">
+        try {
+            if (top.location.host != window.location.host)
+                top.location = window.location;
+        }
+        catch (err) {
+            top.location = window.location;
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+
+    
+    <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QFLS1G3FEY', { cookie_flags: 'max-age=7200;SameSite=Strict;Secure' });
+</script>
+</head>
+<body>
+    <form method="post" action="./LawAll.aspx?pcode=A0030056&amp;kw=%e8%a1%8c%e6%94%bf%e5%9f%b7%e8%a1%8c%e6%b3%95" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="DI4friDDY9LDWhmPgdBugfl0JbRcchPCyQfnkld8Yl90qLLEK2wBWm7cZdWO/d0J5JkDVyttErczxwUnZTKBd+R5iyBDtMcMc22bTj7MmY8=">
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2B8411B9">
+	<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+	<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+</div>
+        <noscript>
+            <div class="noscript">您的瀏覽器，不支援javascript script語法，恐影響到網頁的閱讀</div>
+        </noscript>
+        <a href="#content" id="gotocenter" class="sr-only sr-only-focusable" title="跳至主要內容">跳至主要內容</a>
+        <header>
+			<nav class="navbar navbar-expand-md navbar-dark navbar-default">
+				<!-- 上方選單 -->
+				<div class="collapse navbar-collapse header-nav">
+					<div class="container">
+						<ul class="nav navbar-nav">
+							<a href="#U" id="AU" name="U" title="功能選項區" accesskey="U">:::</a>
+							<li><a href="https://law.moj.gov.tw/SiteMap.aspx">網站導覽</a></li>
+							<li><a href="https://law.moj.gov.tw/Eng/index.aspx">English</a></li>
+							<li id="lilogin"><a href="https://law.moj.gov.tw/Mem/Login.aspx">會員登入</a></li>
+							
+							
+						</ul>
+						<ul class="wordsize">
+							<li><a href="#" data-size="90%" title="小字型"><i class="sizeS text-hide">小字型</i></a></li>
+							<li class="active"><a href="#" data-size="100%" title="中字型"><i class="sizeM text-hide">中字型</i></a></li>
+							<li><a href="#" data-size="110%" title="大字型"><i class="sizeB text-hide">大字型</i></a></li>
+						</ul>
+					</div>
+				</div>
+					
+				<div class="container navbar-header">
+					<h1 class="col-md-5 col-sm-6 col-xs-9 logo flex-fill"><a href="https://law.moj.gov.tw/Index.aspx" title="全國法規資料庫：回首頁">
+					  <img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/logo.png" width="355" height="80" alt="全國法規資料庫"></a>
+					</h1>
+					<div class="col-md-7 col-sm-6 hidden-sm hidden-xs flex-fill search-box">
+						
+						<nav>
+							<div class="input-group flex-nowrap">
+								<label for="keyword">
+									<div class="dropdown"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+										<a id="dropdownMenu" class="btn dropdown-toggle" aria-haspopup="true" aria-expanded="true" title="請以上下鍵選擇查詢類別" href="https://law.moj.gov.tw/#" data-bs-toggle="dropdown">整合查詢<span class="caret"></span></a>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenu" id="unitlist">
+											<li data-value="ONEBAR"><a href="#">整合查詢</a></li>
+											<li data-value="NEWS" class="sub-link"><a href="#">最新訊息</a></li>
+											<li data-value="LAW" class="sub-link"><a href="#">中央法規</a></li>
+											<li data-value="JUDGE" class="sub-link"><a href="#">司法解釋</a></li>
+											<li data-value="CONVENTION" class="sub-link"><a href="#">條約協定</a></li>
+											<li data-value="CHINA" class="sub-link"><a href="#">兩岸協議</a></li>
+											<li data-value="SMART" class="sub-link"><a href="#">智慧查找</a></li>
+										</ul>
+										<input type="hidden" name="ctl00$hidMode" id="hidMode" value="整合查詢">
+										<input type="hidden" name="ctl00$hidVal" id="hidVal" value="ONEBAR">
+										<input type="hidden" name="ctl00$hidkw" id="hidkw" value="行政執行法">
+									</div>
+								</label>
+								<div id="pnControl" class="input-group form-control-static" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btnQall')">
+	
+									<input name="ctl00$keyword" type="text" maxlength="128" id="keyword" accesskey="S" class="form-control ui-autocomplete-input" placeholder="請輸入關鍵字" autocomplete="off">
+									<span class="input-group-btn">
+										<input type="submit" name="ctl00$btnQall" value="查詢" id="btnQall" title="輸入關鍵字查詢" class="btn btn-default">
+										
+										<input type="submit" name="ctl00$btnDeepSearch" value="再檢索" id="btnDeepSearch" title="保留原查詢文字，再新增關鍵字查詢" class="btn btn-default btn-search">
+									</span>
+								
+</div>
+							</div>
+							
+							<!-- 再檢索-檢索字詞 -->
+							<div id="divDeepSearch" class="LawHotLink2 hidden-xs">
+								<dl>
+									<dt>檢索字詞：</dt>
+									<dd class="ddKeyword">
+										<ul id="ulDeepSearch" style="overflow:inherit">
+											<li class="BtnKeyword">行政執行法<a class="linkClose" href="https://law.moj.gov.tw/index.aspx?ty=ONEBAR&amp;kw="><img class="imgClose" src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/close-window.png" alt="清除單一條件"></a></li>
+										</ul>
+										<div>
+											<input type="submit" name="ctl00$btnClearContition" value="清除條件" id="btnClearContition" title="清除「再檢索」所有條件">
+											<a id="btnOpen" style="display:none" href="#" title="隱藏部分「再檢索」篩選條件，僅顯示一行">收合</a>
+										</div>
+									</dd>
+								</dl>
+							</div>
+						</nav>
+					</div>
+					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#FunNavbar" aria-controls="FunNavbar" aria-expanded="false" aria-label="功能選單">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+			  </div>
+			  <!-- 行動版主選單 -->
+                <div class="collapse navbar-collapse menu" id="FunNavbar" role="navigation">
+                    <div class="container">
+                        <hr class="hidden-xs">
+                        <ul>
+                            <li><a href="https://law.moj.gov.tw/News/NewsList.aspx" onclick="GoogleAnanlytice('中文','最新訊息','','');" onkeypress="GoogleAnanlytice('中文','最新訊息','','');">最新訊息</a></li>
+                            <li><a href="https://law.moj.gov.tw/Law/LawSearchLaw.aspx" onclick="GoogleAnanlytice('中文','中央法規','','');" onkeypress="GoogleAnanlytice('中文','中央法規','','');">中央法規</a></li>
+                            <li><a href="https://law.moj.gov.tw/Law/LawSearchJudge.aspx" onclick="GoogleAnanlytice('中文','司法解釋','','');" onkeypress="GoogleAnanlytice('中文','司法解釋','','');">司法解釋</a></li>
+                            <li><a href="https://law.moj.gov.tw/Law/LawSearchAgree.aspx" onclick="GoogleAnanlytice('中文','條約協定','','');" onkeypress="GoogleAnanlytice('中文','條約協定','','');">條約協定</a></li>
+                            <li><a href="https://law.moj.gov.tw/Law/LawSearchTwo.aspx" onclick="GoogleAnanlytice('中文','兩岸協議','','');" onkeypress="GoogleAnanlytice('中文','兩岸協議','','');">兩岸協議</a></li>
+                            <li><a href="https://law.moj.gov.tw/Law/LawSearchAll.aspx" onclick="GoogleAnanlytice('中文','綜合查詢','','');" onkeypress="GoogleAnanlytice('中文','綜合查詢','','');">綜合查詢</a></li>
+                            <li><a href="https://law.moj.gov.tw/CrossGov/CrossGov.aspx" onclick="GoogleAnanlytice('中文','跨機關檢索','','');" onkeypress="GoogleAnanlytice('中文','跨機關檢索','','');">跨機關檢索</a></li>
+                            <!-- 小螢幕才會顯示 -->
+                            <li class="topmenu visible-xs"><a href="https://law.moj.gov.tw/Hot/Hot.aspx" onclick="GoogleAnanlytice('中文','熱門法規','','');" onkeypress="GoogleAnanlytice('中文','熱門法規','','');">熱門法規</a></li>
+                            <li class="topmenu visible-xs"><a href="https://law.moj.gov.tw/RelatedLink.aspx" onclick="GoogleAnanlytice('中文','相關連結','','');" onkeypress="GoogleAnanlytice('中文','相關連結','','');">相關連結</a></li>
+                            <li class="topmenu visible-xs"><a href="https://law.moj.gov.tw/SiteMap.aspx" onclick="GoogleAnanlytice('中文','網站導覽','','');" onkeypress="GoogleAnanlytice('中文','網站導覽','','');">網站導覽</a></li>
+                            <li class="topmenu visible-xs"><a href="https://law.moj.gov.tw/Eng/index.aspx" onclick="GoogleAnanlytice('中文','ENGLISH','','');" onkeypress="GoogleAnanlytice('中文','ENGLISH','','');">English</a></li>
+                            <li id="mslilogin" class="topmenu visible-xs"><a href="https://law.moj.gov.tw/Mem/Login.aspx">會員登入</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- 主要內容 -->
+        <div id="content" class="clearfix content">
+            <!-- 整合查詢 行動版 -->
+            <div id="pnMsControl" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'btnMsQall')">
+	
+                <nav class="clearfix search-box-m visible-sm visible-xs">
+                    <div class="container">
+						<div class="input-group flex-nowrap">
+							<input name="ctl00$msKeyword" type="text" maxlength="128" id="msKeyword" class="form-control" placeholder="整合查詢" title="查詢">
+								<input type="submit" name="ctl00$btnMsQall" value="查詢" id="btnMsQall" title="輸入關鍵字查詢" class="btn btn-default">
+								<input type="submit" name="ctl00$btnMsDeepSearch" value="再檢索" id="btnMsDeepSearch" title="保留原查詢文字，再新增關鍵字查詢" class="btn btn-default btn-search">
+						</div>
+						<!-- 再檢索-推薦字詞 -->
+						<div id="divmDeepSearch" class="LawHotLink_m">
+							<dl>
+								<dt>檢索字詞：<input type="submit" name="ctl00$btnmClearContition" value="清除條件" id="btnmClearContition"></dt>
+								<dd class="ddKeyword">
+									<ul>
+										<li class="BtnKeyword">行政執行法<a class="linkClose" href="https://law.moj.gov.tw/index.aspx?ty=ONEBAR&amp;kw="><img class="imgClose" src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/close-window.png" alt="清除單一條件"></a></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+                    </div>
+                </nav>
+            
+</div>
+            
+    <div class="container">
+        <a href="#C" id="AC" name="C" title="內容區塊" accesskey="C">:::</a>
+        <ol class="breadcrumb">
+            現在位置：
+            <li><a href="https://law.moj.gov.tw/Index.aspx">首頁</a></li>
+            <li><a id="hlBreadcrumb" href="https://law.moj.gov.tw/Law/LawSearchLaw.aspx">中央法規</a></li>
+            <li>所有條文</li>
+        </ol>
+        
+        <div class="law-tool">
+            
+            
+
+<div class="share-bar" style="display: inline-block;">
+    <a href="#" data-sharetype="FB" title="分享到 Facebook（另開新視窗）">
+        <span class="stack s-facebook"><img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/logo_facebook.png" alt="facebook"></span>
+    </a>
+    <a href="#" data-sharetype="TWITTER" title="分享到 Twitter（另開新視窗）">
+        <span class="stack s-twitter"><img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/logo_twitter2023.png" alt="twitter"></span>
+    </a>
+    <a href="#" data-sharetype="PLURK" title="分享到 PLURK（另開新視窗）">
+        <span class="stack s-plurk">P</span>
+    </a>
+    <a href="#" data-sharetype="LINE" id="hlLine" data-lang="zh_Hant" data-url="http://123" data-type="share-f" rel="nofollow" title="分享到 Line（另開新視窗）">
+        <span class="stack s-line"><img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/logo_line.png" alt="LINE"></span>
+    </a>
+    <a id="hlkPdf" data-sharetype="PDF" rel="noreferrer noopener" title="下載PDF檔（另開新視窗）" href="https://law.moj.gov.tw/LawClass/FilesType.aspx?DataId=A0030056&amp;md=m" target="_blank"><span class="stack s-pdf"><img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/logo_pdf.png" alt="PDF"></span></a>
+</div>
+<script>
+   $(function () {
+        $(".share-bar").css("display", "inline-block");
+        $(".share-bar a").on("click keypress ", function (event) {
+            if (event.keyCode == 13 || event.button == 0) {
+            event.preventDefault();
+                var Type = $(this).data("sharetype");
+                if (Type != "PDF")
+                    window.open(shareTo(Type, "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030056"), "_blank");
+                else window.location.href = $('#hlkPdf').attr("href");
+            }
+        });
+    });
+</script>
+
+            
+              
+            <a id="btnDownLoad" title="另開視窗" class="btn btn-sm btn-default hidden-xs" rel="noreferrer noopener" data-fancybox="" data-type="iframe" href="https://law.moj.gov.tw/LawClass/FilesType.aspx?DataId=A0030056&amp;SLI=CALL" target="_blank">
+                <i class="glyphicon glyphicon-download-alt" aria-hidden="true"></i>下載</a>
+            <a id="hlPrint" class="btn btn-sm btn-default hidden-xs" rel="noreferrer noopener" title="另開新視窗" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?media=print&amp;pcode=A0030056" target="_blank"><i class="glyphicon glyphicon-print" aria-hidden="true"></i>友善列印</a>
+            
+            
+
+<div class="folder-menu collapse" id="folderlist">
+    <p>加入資料夾：</p>
+    <ul>
+        
+        <li style="display: none;">
+            <div class="input-group">
+                <input type="text" id="txtNewFolder" class="form-control" placeholder="請輸入資料夾名稱" maxlength="32" title="加入資料夾">
+                <button type="button" id="btnAddNewFolder" class="btn btn-default">儲存</button>
+            </div>
+        </li>
+    </ul>
+    <div class="folder-menu-buttons">
+        
+        <a id="hlSaveToFolder" class="btn btn-sm btn-block btn-default" data-bs-toggle="collapse" href="javascript:void(0);">確定</a>
+        <a id="hlNewFolder" class="btn btn-sm btn-block btn-default" href="javascript:void(0);">新增資料夾</a>
+        <a id="hlAdmFolder" class="btn btn-sm btn-block btn-default" href="https://law.moj.gov.tw/Mem/Folders.aspx">管理資料夾</a>
+    </div>
+</div>
+<script>
+    $(function () {
+        //無障礙，預設隱藏，JS有啟用時才看的到
+        $("#hlAddToFolder").removeClass("hidden");
+        $(".folder-menu li").last().hide();
+        $("#hlNewFolder").on("click", function (event) {
+            event.preventDefault();
+            $(".folder-menu li").last().toggle();
+            if ($(this).text() == "新增資料夾") {
+                $("#txtNewFolder").focus();
+                $(this).text("取消");
+            }
+            else
+                $(this).text("新增資料夾");
+        });
+        $("#btnAddNewFolder").on("click", function (event) {
+            var fname = $.trim($("#txtNewFolder").val());
+            if (fname == "") return false;
+
+
+            $.ajax({
+                url: "../controls/FolderHandler.ashx",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    foldername: encodeURI($.trim($("#txtNewFolder").val()))
+                },
+                success: function (data) {
+
+                    $.each(data, function (index, element) {
+                        $("<li><label for=\"cbFID" + element.FID + "\"><input type=\"checkbox\" id=\"cbFID" + element.FID + "\" value=\"" + element.FID + "\">" + element.NAME + "</label></li>")
+                            .insertBefore($("#folderlist li:last"));
+                        $("#txtNewFolder").val("");
+                        $(".folder-menu li").last().hide();
+                    });
+                }
+            });
+        });
+        $("#hlSaveToFolder").on("click", function (event) {
+            var checkedFID = $("#folderlist input[type='checkbox']:checked").map(function () { return this.value; }).get().join(',');
+            if (checkedFID == "") {
+                alert("請選擇所要儲存的資料夾。")
+                return false;
+            }
+            $.ajax({
+                url: "../controls/FolderHandler.ashx",
+                type: "POST",
+                data: {
+                    lan: "C",
+                    datatype: encodeURI("01"),
+                    dataid: encodeURI("A0030056"),
+                    datatitle: encodeURI("行政執行法施行細則"),
+                    fid: encodeURI(checkedFID)
+                },
+                success: function (data) {
+                    alert("您已成功儲存此頁至您個人資料夾。");
+                    $("#folderlist input[type='checkbox']").prop("checked", false);
+                    $("#folderlist").collapse("hide");
+                }
+            });
+        });
+        $('#hlMoveToFolder').on("click", function () {
+            var x = $('#hfSelect').val();
+            var checkedFID = $("#folderlist input[type='checkbox']:checked").map(function () { return this.value; }).get().join(',');
+            if (checkedFID == "") {
+                alert("請選擇所要儲存的資料夾。")
+                return false;
+            }
+            if (x=='') {
+                alert("請選擇所要搬移的資料。")
+                return false;
+            }
+            $.ajax({
+                url: "../controls/FolderMoveHandler.ashx",
+                type: "POST",
+                data: {
+                    rfid: encodeURI(''),
+                    did: encodeURI(x),
+                    fid: encodeURI(checkedFID)
+                },
+                success: function (data) {
+                    alert("您已成功儲存此頁至您個人資料夾。");
+                    $("#folderlist input[type='checkbox']").prop("checked", false);
+                    $("#folderlist").collapse("hide");
+                    window.location.reload();
+                }
+            });
+        });
+    });
+</script>
+        </div>
+        <div class="text-con">
+            <div class="text-title">
+                <h2>所有條文</h2>
+            </div>
+            
+            
+<div class="table-title">
+    <table class="table">
+        <tbody><tr>
+            <th>法規名稱：</th>
+            <td>
+                
+                <a id="hlLawName" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030056">行政執行法施行細則</a>
+                <span class="label-eng"><a href="https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=A0030056">EN</a></span>
+            </td>
+        </tr>
+        
+        <tr id="trLNNDate">
+	<th>修正日期：</th>
+	<td>民國 99 年 06 月 15 日 </td>
+</tr>
+
+        
+        
+        <tr>
+            <th>法規類別：</th>
+            <td>行政 ＞ 法務部 ＞ 行政執行目</td>
+        </tr>
+        
+    </tbody></table>
+
+    <ul id="LawMenu" class="btnZone">
+        <li><a id="hlkAllLaw" class="btn btn-default" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0030056">所有條文</a></li>
+        <li></li>
+        <li><a id="hlkNoSearch" class="btn btn-default" href="https://law.moj.gov.tw/LawClass/LawSearchCNKey.aspx?BTNType=NO&amp;pcode=A0030056">條號查詢</a></li>
+        <li><a id="hlkNContentSearch" class="btn btn-default" href="https://law.moj.gov.tw/LawClass/LawSearchCNKey.aspx?BTNType=CON&amp;pcode=A0030056">條文檢索</a></li>
+        <li><a href="https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=A0030056" class="btn btn-default">沿革</a></li>
+        
+        <li></li>
+        
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="btnZone text-danger" style="text-align:left;font-family:細明體;line-height:160%">
+        <div id="divOldText">※歷史法規係提供九十年四月以後法規修正之歷次完整舊條文。</div>
+        <div id="divHintText">※如已配合行政院組織改造，公告變更管轄或停止辦理業務之法規條文，請詳見沿革</div>
+    </div>
+</div>
+
+            
+            
+            
+            <div id="pnLawFla" class="well law-reg law-content">
+	
+                <div class="law-reg-content">
+                    <div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=1" name="1">第 1 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本細則依行政執行法（以下簡稱本法）第四十三條規定訂定之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=2" name="2">第 2 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第二條所稱公法上金錢給付義務如下：</div><div class="line-0004">一、稅款、滯納金、滯報費、利息、滯報金、怠報金及短估金。</div><div class="line-0004">二、罰鍰及怠金。</div><div class="line-0004">三、代履行費用。</div><div class="line-0004">四、其他公法上應給付金錢之義務。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=3" name="3">第 3 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第三條所定以適當之方法為之，不得逾達成執行目的之必要限度，指於行政執行時，應依下列原則為之：</div><div class="line-0004">一、採取之執行方法須有助於執行目的之達成。</div><div class="line-0004">二、有多種同樣能達成執行目的之執行方法時，應選擇對義務人、應受執行人及公眾損害最少之方法為之。</div><div class="line-0004">三、採取之執行方法所造成之損害不得與欲達成執行目的之利益顯失均衡。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=4" name="4">第 4 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第四條第一項所稱原處分機關，其認定以實施行政處分時之名義為準。但上級機關本於法定職權所為之行政處分，交由下級機關執行者，以該上級機關為原處分機關。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=5" name="5">第 5 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第四條第一項所稱該管行政機關，指相關法令之主管機關或依法得為即時強制之機關。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=6" name="6">第 6 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第四條第一項所定之原處分機關或該管行政機關經裁撤或改組時，以承受其業務之機關為執行機關；無承受其業務之機關者，以其上級機關為執行機關。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=6-1" name="6-1">第 6-1 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">法務部行政執行署所屬行政執行處為執行本法第四條第一項之公法上金錢給付義務事項，得將權限之一部分委託民間團體或個人辦理。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=7" name="7">第 7 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第五條第一項所稱其他休息日，指應放假之紀念日及其他由中央人事主管機關規定應放假之日。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=8" name="8">第 8 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第五條第一項及第二項所稱夜間，指日出前、日沒後。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=9" name="9">第 9 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">行政執行應作成執行筆錄。但直接強制或即時強制，因情況急迫或其他原因，不能作成執行筆錄者，得以報告書代之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=10" name="10">第 10 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">行為或不行為義務之執行及即時強制之執行筆錄，應載明下列事項：</div><div class="line-0004">一、執行所依據之行政處分或法令規定及其內容。</div><div class="line-0004">二、義務人或應受執行人之姓名、性別、出生年月日、國民身分證統一編號、職業及居住所；其為法人或其他設有負責人、管理人或代表人之團體者，其名稱、事務所或營業所，及負責人、管理人或代表人之姓名、性別、出生年月日、國民身分證統一編號、職業及住居所。</div><div class="line-0004">三、應執行標的所在地、種類、數量、品質及其他應記明事項。</div><div class="line-0004">四、執行方法。轉換執行方法或終止執行者，其事由。</div><div class="line-0004">五、聲明異議者，異議人之姓名、關係、異議事由及對聲明異議之處置。</div><div class="line-0004">六、請求協助執行者，其事由及被請求協助機關名稱。</div><div class="line-0004">七、執行人員及在場之人簽名。在場之人拒簽者，其事由。</div><div class="line-0004">八、執行處所及執行之年、月、日、時。</div><div class="line-0000 show-number">公法上金錢給付義務逾期不履行，經移送行政執行處執行者，其執行筆錄應記載之事項，準用強制執行法有關規定。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=11" name="11">第 11 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行機關依本法第五條第一項但書規定於夜間、星期日或其他休息日執行者，應將情況急迫或徵得義務人同意之情形，記明於執行筆錄或報告書。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=12" name="12">第 12 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行人員於行為或不行為義務之強制執行及即時強制時，應由義務人或可為其代表之人在場；如無此等人在場時，得由鄰居或就近自治團體之職員在場。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=13" name="13">第 13 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行機關為依本法第六條規定於必要時請求其他機關協助執行，得視事實需要會商相關機關訂定協調聯繫注意事項。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=14" name="14">第 14 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">執行機關執行時，應依職權調查有無本法第八條第一項各款所定情形。</div><div class="line-0000 show-number">行政執行有本法第八條第一項各款所定情形之一者，義務人或利害關係人得陳明理由並檢附有關文件，申請執行機關終止執行。</div><div class="line-0000 show-number">執行機關終止執行時，應通知義務人及利害關係人。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=15" name="15">第 15 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">義務人或利害關係人依本法第九條第一項規定聲明異議者，應以書面為之。但執行時得當場以言詞為之，並由執行人員載明於執行筆錄。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=16" name="16">第 16 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法第九條第二項所稱直接上級主管機關，於公法上金錢給付義務執行事件，係指法務部行政執行署。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=17" name="17">第 17 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">直接上級主管機關對於執行機關依本法第九條第二項規定送請決定之聲明異議事件，認其異議有理由者，應命執行機關停止執行，並撤銷或更正已為之執行行為；認其異議無理由者，應附理由駁回之。</div><div class="line-0000 show-number">前項決定，應以書面通知原執行機關及異議人。</div><div class="line-0000 show-number">不服中央各院之行政執行而聲明異議，經各該院認其異議無理由者，由該院附具理由駁回之，並以書面通知異議人。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=18" name="18">第 18 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">公法上金錢給付義務之執行事件，第三人就執行標的物認有足以排除執行之權利時，得於執行程序終結前，依強制執行法第十五條規定向管轄法院提起民事訴訟。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=19" name="19">第 19 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">公法上金錢給付義務事件移送行政執行處執行前，除法令另有規定或以執行憑證移送執行者外，宜由原處分機關或該管行政機關儘量催繳。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=20" name="20">第 20 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">公法上金錢給付義務之執行，應以執行標的物所在地之該管行政執行處為執行機關；其不在同一行政執行處轄區者，得向其中任一行政執行處為之。</div><div class="line-0000 show-number">應執行之標的物所在地不明者，由義務人之住居所、公務所、事務所或營業所所在地之行政執行處管轄。</div><div class="line-0000 show-number">受理公法上金錢給付義務執行事件之行政執行處，須在他行政執行處轄區內為執行行為時，應囑託該他行政執行處為之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=21" name="21">第 21 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">行政執行處依本法第十一條第一項規定，對於主管機關移送之公法上金錢給付義務執行事件，就義務人財產為執行時，移送機關應指派熟諳業務法令之人員協助配合執行。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=22" name="22">第 22 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">公法上金錢給付義務執行事件移送該管行政執行處時，應以一執行名義為一案，並以一案為一號。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=23" name="23">第 23 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">移送機關移送行政執行處執行之移送書及相關文件之格式，由法務部行政執行署定之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=24" name="24">第 24 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">公法上金錢給付義務執行事件移送該管行政執行處後，移送機關得於執行終結前撤回之。但於拍定後拍賣物所有權移轉前撤回者，應得拍定人之同意。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=25" name="25">第 25 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">行政執行處就已查封之財產不再繼續執行時，如有執行法院函送併辦之事件，應維持已實施之執行程序原狀，並依強制執行法第三十三條之一第三項規定將有關卷宗送由執行法院繼續執行。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=26" name="26">第 26 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">行政執行處依強制執行法第三十三條之二第一項規定將執行事件函送執行法院併辦時，應敘明如執行法院就已查封之財產不再繼續執行時，應依同條第二項規定維持已實施之執行程序原狀，並將有關卷宗送由行政執行處繼續執行之意旨。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=27" name="27">第 27 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">義務人依其經濟狀況或因天災、事變致遭受重大財產損失，無法一次完納公法上金錢給付義務者，行政執行處於徵得移送機關同意後，得酌情核准其分期繳納。經核准分期繳納，而未依限繳納者，行政執行處得廢止之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=28" name="28">第 28 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">行政執行處依本法第十七條第一項規定限制義務人之住居者，應通知義務人及有關機關。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=29" name="29">第 29 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">行政執行處依本法第十七條第三項、第六項規定向法院聲請拘提、管收，應具聲請書及聲請拘提、管收所必要之相關證明文件影本，並釋明之。</div><div class="line-0000 show-number">行政執行處向法院聲請管收時，應將被聲請管收人一併送交法院。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=30" name="30">第 30 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">拍賣、鑑價、估價、查詢、登報、保管及其他因強制執行所支出之必要費用，移送機關應代為預納，並依本法第二十五條但書規定向義務人取償。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=31" name="31">第 31 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行機關依本法第二十八條第二項第二款規定執行封閉時，應派員將處分文書及封閉範圍之圖說明顯揭示於該封閉處所，並於各出入口設置障礙物。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=32" name="32">第 32 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行機關依本法第二十九條第一項規定，委託第三人或指定人員代履行時，應以文書載明下列事項，送達於義務人：</div><div class="line-0004">一、執行機關及義務人。</div><div class="line-0004">二、受委託之第三人或指定之人員。</div><div class="line-0004">三、代履行之標的。</div><div class="line-0004">四、代履行費用之數額、繳納處所及期限。</div><div class="line-0004">五、代履行之期日。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=33" name="33">第 33 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">受委託之第三人於代履行時，有本法第六條第一項第三款至第五款規定情事者，應即通知執行機關。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=34" name="34">第 34 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">執行機關依本法第三十條或第三十一條規定處以怠金時，應以文書載明下列事項送達於義務人：</div><div class="line-0004">一、執行機關及義務人。</div><div class="line-0004">二、應履行之行為或不行為義務與其依據及履行期限。</div><div class="line-0004">三、處以怠金之事由及金額。</div><div class="line-0004">四、怠金之繳納期限及處所。</div><div class="line-0004">五、不依限繳納時將予強制執行之意旨。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=35" name="35">第 35 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">依本法第三十七條執行對於人之管束時，執行人員應即將管束原因及概略經過報告主管長官；執行機關並應儘速將管束原因，告知本人及其配偶、法定代理人、指定之親友或其他適當之機關（構）。但不能告知者，不在此限。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=36" name="36">第 36 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">對於人之管束，應注意其身體及名譽。執行人員以強制力實施者，不得逾必要之程度。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=37" name="37">第 37 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">依本法第三十八條執行物之扣留時，執行機關應製作收據，詳載扣留物之名稱、數量，付與所有人、持有人或保管人。</div><div class="line-0000 show-number">前項扣留物不便保管或搬運者，得予封存，命所有人、持有人或保管人出據看守或保管。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=38" name="38">第 38 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">扣留之物，依法應沒收、沒入、毀棄或應變價發還者，執行機關應即自行或移送有關機關依相關法令規定程序辦理，並通知所有人、持有人或保管人。</div><div class="line-0000 show-number">扣留之物，依本法第三十八條第二項但書規定延長扣留期間者，應將其原因通知所有人、持有人或保管人。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=39" name="39">第 39 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">扣留之物，依本法第三十八條第三項規定應發還或變價發還者，執行機關應以書面通知所有人、持有人或保管人出據具領；其經封存者，應予啟封。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=40" name="40">第 40 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">依本法第四十一條請求，特別損失之補償時，請求人或其代理人應以書面載明下列事項，並於簽名或蓋章後，向執行機關提出：</div><div class="line-0004">一、請求人之姓名、性別、出生年月日、國民身分證統一編號、職業及住居所。</div><div class="line-0004">二、有代理人者，其姓名、性別、出生年月日、國民身分證統一編號、職業及住居所或事務所。</div><div class="line-0004">三、請求補償之原因事實、理由及證據。</div><div class="line-0004">四、請求補償之金額。</div><div class="line-0004">五、執行機關。</div><div class="line-0004">六、年、月、日。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=41" name="41">第 41 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">執行機關對於特別損失補償之請求，應於收到請求書後三十日內決定之。</div><div class="line-0000 show-number">執行機關為補償之決定者，應以書面載明補償之金額，通知請求人或其代理人出據具領；為不予補償之決定者，應以書面載明理由，通知請求人或其代理人。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=42" name="42">第 42 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000">本法修正施行前之公法上金錢給付義務強制執行事件，於本法修正施行後尚未移送法院強制執行者，由主管機關移送該管行政執行處依本法規定執行之；其已移送法院強制執行尚未終結者，繫屬之法院應維持已實施之執行程序原狀，並將有關卷宗送由該管行政執行處依本法規定繼續執行之。</div></div>
+</div></div>
+<div class="row"><div class="col-no"> <a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0030056&amp;flno=43" name="43">第 43 條</a></div><div class="col-data"><div class="law-article">
+<div class="line-0000 show-number">本細則自本法修正條文施行之日施行。</div><div class="line-0000 show-number">本細則修正條文自發布日施行。</div></div>
+</div></div>
+
+                </div>
+            
+</div>
+        </div>
+    </div>
+
+        </div>
+        <!-- 主要內容結束 -->
+
+
+        <!-- 頁尾 -->
+        <footer>
+            <!-- 胖頁尾 -->
+            <div class="fatfooter">
+                <div class="clearfix container">
+                    <a href="#Z" id="AZ" name="Z" title="網站資訊區塊" accesskey="Z">:::</a>
+                    <ul class="line">
+                        <li><a href="https://law.moj.gov.tw/News/NewsList.aspx" onclick="GoogleAnanlytice('中文','最新訊息','','');" onkeypress="GoogleAnanlytice('中文','最新訊息','','');">最新訊息</a></li>
+                        <li><a href="https://law.moj.gov.tw/Law/LawSearchLaw.aspx" onclick="GoogleAnanlytice('中文','中央法規','','');" onkeypress="GoogleAnanlytice('中文','中央法規','','');">中央法規</a></li>
+                        <li><a href="https://law.moj.gov.tw/Law/LawSearchJudge.aspx" onclick="GoogleAnanlytice('中文','司法解釋','','');" onkeypress="GoogleAnanlytice('中文','司法解釋','','');">司法解釋</a></li>
+                        <li><a href="https://law.moj.gov.tw/Law/LawSearchAgree.aspx" onclick="GoogleAnanlytice('中文','條約協定','','');" onkeypress="GoogleAnanlytice('中文','條約協定','','');">條約協定</a></li>
+                        <li><a href="https://law.moj.gov.tw/Law/LawSearchTwo.aspx" onclick="GoogleAnanlytice('中文','兩岸協議','','');" onkeypress="GoogleAnanlytice('中文','兩岸協議','','');">兩岸協議</a></li>
+                        <li><a href="https://law.moj.gov.tw/Law/LawSearchAll.aspx" onclick="GoogleAnanlytice('中文','綜合查詢','','');" onkeypress="GoogleAnanlytice('中文','綜合查詢','','');">綜合查詢</a></li>
+                        <li><a href="https://law.moj.gov.tw/CrossGov/CrossGov.aspx" onclick="GoogleAnanlytice('中文','跨機關檢索','','');" onkeypress="GoogleAnanlytice('中文','跨機關檢索','','');">跨機關檢索</a></li>
+                    </ul>
+                    <ul>
+                        <li class="nolink">法治宣導專區
+                            <ul>
+                                <li><a href="https://law.moj.gov.tw/SmartSearch/main.aspx" onclick="GoogleAnanlytice('中文','智慧查找','','');" onkeypress="GoogleAnanlytice('中文','智慧查找','','');">智慧查找</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/LegalAid.aspx" onclick="GoogleAnanlytice('中文','法律扶助','','');" onkeypress="GoogleAnanlytice('中文','法律扶助','','');">法律扶助</a></li>
+                                <li><a href="https://law.moj.gov.tw/Digital/index.aspx" onclick="GoogleAnanlytice('中文','創意教案','','');" onkeypress="GoogleAnanlytice('中文','創意教案','','');">創意教案</a></li>
+                                
+                                <li><a href="https://www.moj.gov.tw/2204/2528/2547/2576/" target="_blank" rel="noreferrer noopener" title="另開新視窗" onclick="GoogleAnanlytice('中文','法律時事漫談','','');" onkeypress="GoogleAnanlytice('中文','法律時事漫談','','');">法律時事漫談</a></li>
+                            </ul>
+                        </li>
+                        <li class="nolink">網站使用說明
+                            <ul>
+                                <li><a href="https://law.moj.gov.tw/Service/%E7%B6%B2%E7%AB%99%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8A.pdf" title="下載：網站使用手冊.PDF">網站使用手冊</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB%E6%9C%83%E5%93%A1%E6%9C%8D%E5%8B%99%E4%BB%8B%E7%B4%B9.pdf" title="下載：全國法規資料庫會員服務介紹.PDF">會員服務介紹</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/Intro.aspx">網站單元簡介</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/LawData.aspx">法規資料檢索範圍</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/refresh.aspx">資料更新頻率說明</a></li>
+                            </ul>
+                        </li>
+                        <li class="nolink">資訊服務
+                            <ul>
+                                <li><a href="https://law.moj.gov.tw/Service/Link.aspx">全國法規連結圖示</a></li>
+                                <li><a href="https://law.moj.gov.tw/Service/standard.aspx">全國法規作業要點</a></li>
+								<li><a href="https://www.ey.gov.tw/Page/4F152FEBB9602003" target="_blank" rel="noreferrer noopener" title="另開新視窗">法規名稱英譯標準表</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://law.moj.gov.tw/RelatedWebsite.aspx">相關網站</a></li>
+                    </ul>
+                    <!-- 訂閱電子報 -->
+                    <div class="epaper">
+                        <h2><label for="txtEMail">訂閱電子報</label></h2>
+                        <input name="ctl00$txtEMail" type="text" id="txtEMail" validationgroup="EPaper" placeholder="請輸入電子郵件信箱" maxlength="64">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="submit" name="ctl00$btnSubscribe" value="訂閱" id="btnSubscribe" class="btn btn-epaper">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" name="ctl00$btnUnsubscribe" value="取消訂閱" id="btnUnsubscribe" class="btn btn-epaper">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" name="ctl00$btnSubscribeOld" value="訂閱舊報" id="btnSubscribeOld" class="btn btn-epaper">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 瀏覽人次 -->
+            <div class="visitors hidden-xs">
+                <div class="clearfix container">
+                    <div class="img-doll"></div>
+                    <div class="items">
+                        <div class="h3">瀏覽人次總計</div>
+                        <p><span>1,483,247,239人</span></p>
+                    </div>
+                    <div class="items">
+                        <div class="h3">本月瀏覽人次</div>
+                        <p><span>2,164,377人</span></p>
+                    </div>
+                    <div class="items">
+                        <div class="h3">目前使用人次</div>
+                        <p><span>1,328人</span></p>
+                    </div>
+                    <div class="items">
+                        <div class="h3">電子報訂閱人數</div>
+                        <p><span>220,058人</span></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 網站說明 -->
+            <div class="notes">
+                <div class="clearfix container">
+                    <ul>
+                        <li>本網站係提供法規之最新動態資訊及資料檢索，並不提供法規及法律諮詢之服務。</li>
+                        <li>若有任何法律上的疑義，建議您可逕向發布法規之主管機關洽詢。</li>
+                        <li>本網站法規資料係由政府各機關提供之電子檔或書面文字登打製作，若與各法規主管機關之公布文字有所不同，仍以各法規主管機關之公布資料為準。</li>
+                        <li>部分資料內容，使用特殊文字或符號，如欲詳閱內容，請連結至<a href="https://www.judicial.gov.tw/jfont/wordsearch.asp" target="_blank" rel="noreferrer noopener" title="另開新視窗">司法院網站</a>下載造字檔。</li>
+                        <li>全國法規資料庫之內容每週五定期更新，當週發布之法律、命令資料，將於完成法規整編作業後，於下週五更新上線。</li>
+                        <li>法規整編資料截止日：民國 114 年 08 月 01 日 </li>
+                        <li class="visible-xs">瀏覽人次總計：1,483,247,239人</li>
+                        <li class="visible-xs">本月瀏覽人次：2,164,377人</li>
+                        <li class="visible-xs">目前使用人次：1,328人</li>
+                        <li class="visible-xs">電子報訂閱：220,058人</li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!-- 版權說明 -->
+            <div class="copyrights">
+                <div class="clearfix container">
+                    <p>│ <a href="https://law.moj.gov.tw/Service/Copyright.aspx">政府網站資料開放宣告</a> │ <a href="https://law.moj.gov.tw/Service/Privacy.aspx">隱私權保護宣告</a> │ <a href="https://www.moj.gov.tw/2204/2645/2700/" target="_blank" rel="noreferrer noopener" title="另開新視窗">資訊安全政策</a> │ <a href="https://law.moj.gov.tw/Qanda.aspx">Q &amp; A</a> │ <a href="https://law.moj.gov.tw/ServiceMail.aspx">意見回饋</a> │ <a href="https://law.moj.gov.tw/api"> API文件</a> │ </p>
+                    <p>本網站由法務部全國法規資料庫工作小組維運管理.</p>
+					<p><span>法務部地址：100204 台北市重慶南路一段130號</span>　<span>電話：(02)2191-0189</span><br>
+					<span>第二辦公室地址：100006 台北市貴陽街1段235號</span>　<span>電話：(02)2191-0189</span></p>
+					<div class="logo-box"><a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20250319102127" target="_blank" rel="noreferrer noopener" title="無障礙網站（另開新視窗）">
+							<img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/accessability.png" width="88" height="31" alt="通過A無障礙網頁檢測"></a>
+						<img src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/banner_std14.jpg" width="147" height="31" alt="榮獲第14屆全國標準化獎-團體標準化獎">
+					</div>
+                </div>
+            </div>
+            <p id="gotop" style="display: block;"><a href="#C">回上方</a></p>
+        </footer>
+
+	    <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/jquery.cookie.js" type="text/javascript"></script>
+        <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/app.js" type="text/javascript"></script>
+        <script>
+            $(function () {
+                var b = 'ONEBAR';
+                $("#btnSubscribe,#btnUnsubscribe").on("click", function (event) {
+                    //var email = $.trim($("#txtEMail").val());
+                    //if (email == "") {
+                    //    event.preventDefault();
+                    //    alert('請您輸入電子郵件地址。');
+                    //    $("#txtEMail").focus();
+                    //}
+                    //else if (false == IsEMail(email)) {
+                    //    event.preventDefault();
+                    //    alert('請您輸入正確電子郵件地址。');
+                    //    $("#txtEMail").focus();
+                    //}
+                    //else {
+                    //    GoogleAnanlytice('中文', '訂閱電子報', '', '');
+                    //}
+                    var email = $.trim($("#txtEMail").val());
+                    //if (!validateEmail(email)) {
+                    //    alert('請您輸入正確電子郵件地址。');
+                    //    return false;
+                    //}
+
+                });
+                $('#btnQall').on("click", function () {
+                    if ($.trim($("#keyword").val()) == "") {
+                        alert("請輸入關鍵字"); return false;
+                    }
+                    else {
+                        GoogleAnanlytice("中文", "整合查詢-首頁", "", "");
+                        return true;
+                    }
+                });
+                $('#btnDeepSearch').on("click", function () {
+                    var keyword = '';
+
+                    //20210315 加上判斷，取QueryString(KW)，若輸入關鍵字已搜尋過，則跳出提示訊息，避免重複搜尋
+                    Request = GetRequest();
+                    if ($.trim($("#keyword").val()) == "") {
+                        alert("請輸入關鍵字"); return false;
+                    }
+                    else if (keyword.indexOf($.trim($("#keyword").val())) >= 0) {
+                        alert("此關鍵字已包含至檢索字詞中，請重新輸入");
+                        return false;
+                    }
+                    else {
+                        GoogleAnanlytice("中文", "整合查詢-首頁", "", "");
+                        return true;
+                    }
+                });
+                $('#btnMsQall').on("click", function () {
+                    if ($.trim($("#msKeyword").val()) == "") {
+                        alert("請輸入關鍵字"); return false;
+                    } else {
+                        GoogleAnanlytice("中文", "整合查詢-首頁", "", "");
+                        return true;
+                    }
+                });
+                $('#btnMsDeepSearch').on("click", function () {
+                    var keyword = '';
+
+                    //20210315 加上判斷，取QueryString(KW)，若輸入關鍵字已搜尋過，則跳出提示訊息，避免重複搜尋
+                    Request = GetRequest();
+                    if ($.trim($("#msKeyword").val()) == "") {
+                        alert("請輸入關鍵字"); return false;
+                    } else if (keyword.indexOf($.trim($("#msKeyword").val())) >= 0) {
+                        alert("此關鍵字已包含至檢索字詞中，請重新輸入");
+                        return false;
+                    }
+                    else {
+                        GoogleAnanlytice("中文", "整合查詢-首頁", "", "");
+                        return true;
+                    }
+                });
+                //20210217 再檢索收合、展開功能
+                $("#btnOpen").click(function () {
+                    if ($('#ulDeepSearch').css('overflow') == 'hidden') {
+                        $(this).html("收合");
+                        $(this).prop('title', '隱藏部分「再檢索」篩選條件，僅顯示一行');
+                        $("#ulDeepSearch").css("overflow", "inherit");
+                    }
+                    else {
+                        $(this).html("展開");
+                        $(this).prop('title', '顯示所有目前「再檢索」篩選條件');
+                        $("#ulDeepSearch").css("overflow", "hidden");
+                    }
+                });
+                $("#btnHelp").click(function () {
+                    OpenKeyWordHelp();
+                    return false;
+                });
+                $('#dropdownMenu').attr('data-bs-toggle', 'dropdown');
+                $('#unitlist').on("click", "a", function (e) {
+                    e.preventDefault();
+                    var $this = $(this).parent();
+                    var a = $(this).html();
+                    b = $this.data("value");
+                    $this.addClass("select").siblings().removeClass("select");
+                    $("#dropdownMenu").html(a);
+                    $('#hidVal').val(b);
+                });
+                //$('#keyword').on('input propertychange paste keypress', function () {
+                //    BindAutocomplete('#keyword', b);
+                //});
+                BindAutocompletes('#keyword', b);
+                function BindAutocompletes(orl, stype) {
+                   
+                    $(orl).autocomplete({
+                        source: function (request, response) {
+                            $.ajax({
+                                url: "../controls/GetTermList.ashx",
+                                type: 'post',
+                                dataType: "json",
+                                data: {
+                                    term: request.term, type: stype
+                                },
+                                success: function (data) {
+                                    response(data);
+                                }
+                            });
+                        },
+                        minLength: 1, //至少輸入幾個字元才開始給提示
+                        focus: function (event, ui) {
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            if ($.trim(ui.item.PCODE).length == 0)
+                                $(this).val(ui.item.TERM);
+                            else
+                                location.href = "../Hot/AddHotLaw.ashx?pcode=" + encodeURIComponent(ui.item.PCODE);
+
+                            return false;
+                        },
+                        messages: { noResults: '', results: function () { } }//不顯示結果文字
+                    }).data("ui-autocomplete")._renderItem = function (ul, item) {
+                        if ($.trim(item.PCODE) != "")
+                            return $("<li class='line'>")
+                                .append("<span class='label label-info'>直接連結</span><a>" + item.TERM + "</a>")
+                                .appendTo(ul);
+                        else {
+                            if (ul.find(".label-usual").length == 0)
+                                return $("<li>")
+                                    .append("<span class='label label-info label-usual'>常用詞彙</span><a>" + item.TERM + "</a>")
+                                    .appendTo(ul);
+                            else
+                                return $("<li>")
+                                    .append("<a>" + item.TERM + "</a>")
+                                    .appendTo(ul);
+                        }
+                    };
+                }
+            });
+            function validateEmail(email) {
+                if (email.includes("%")) {
+                    return false;
+                }
+                return true;
+            }
+            function OpenKeyWordHelp() {
+                var a = "/Service/KeyWordHelp.html";
+                TINY.box.show({ iframe: a, width: 810, height: 680 });
+                //return false;
+            }
+            function GetRequest() {
+                var url = location.search;
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+
+            //20210218 再檢索-收合/展開 按鈕判斷顯示時機(若檢索字詞有多行，才要顯示收合/展開，需依照版面尺寸更換條件)
+            if (document.body.clientWidth + 17 > 1200) {
+                var Request = new Object();
+                Request = GetRequest();
+                var keyword = '';
+                if (keyword != null && keyword.length > 26) {
+                    var ui = document.getElementById("btnOpen");
+                    ui.style.display = "";
+                }
+            } else {
+                var Request = new Object();
+                Request = GetRequest();
+                var keyword = '';
+                if (keyword != null && keyword.length > 19) {
+                    var ui = document.getElementById("btnOpen");
+                    ui.style.display = "";
+                }
+            }
+
+        </script>
+        
+    <script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/jquery.fancybox.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $('[data-fancybox]').fancybox({
+                toolbar: false,
+                smallBtn: true,
+                iframe: {
+                    css: {
+                        width: '400px',
+                        height: '170px'
+                    }
+                }
+            });
+        });
+    </script>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="%E8%A1%8C%E6%94%BF%E5%9F%B7%E8%A1%8C%E6%B3%95%E6%96%BD%E8%A1%8C%E7%B4%B0%E5%89%87-%E5%85%A8%E5%9C%8B%E6%B3%95%E8%A6%8F%E8%B3%87%E6%96%99%E5%BA%AB_files/WebResource.js" type="text/javascript"></script>
+</form>
+
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;" unselectable="on"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>

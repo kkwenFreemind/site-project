@@ -1,0 +1,469 @@
+/*** 行動版設定 ***/
+@media (min-width: 576px){.container {max-width: 540px;}}
+@media (min-width: 768px){.container {max-width: 750px;}}
+@media (min-width: 992px){.container {max-width: 970px;}}
+@media (min-width: 1200px){.container {max-width: 1170px;} .hidden-lg{display:none!important;}}
+@media (min-width: 1400px){.container {max-width: 1170px;}}
+
+@media screen and (min-width:768px){.visible-xs{display:none!important}}	
+@media (max-width:767px){
+.visible-xs{display:block!important}
+table.visible-xs{display:table}
+tr.visible-xs{display:table-row!important}
+th.visible-xs,td.visible-xs{display:table-cell!important}
+.hidden-xs{display:none!important}
+}
+@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none!important;}.visible-sm {display:block!important;}}
+@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}
+
+/*** layout ***/
+@media (max-width: 1280px) {
+.visitors .items {
+	padding: 0px 5px;
+	width: 20%;
+}
+/*.law-reg-content {width: 88%;}*/  /* 20200527調整 chrome字型放大 */
+}
+
+@media (max-width: 1200px) {
+.menu li > a {padding: 0px 25px;}
+/*.search-box .dropdown .dropdown-menu {min-width:135px;}*/
+/* 再檢索 */
+.LawHotLink2 dl{ width:79%;}
+.BtnKeyword {max-width:315px;}
+.fatfooter {font-size: 0.9375em;}
+.fatfooter ul > li.nolink {padding: .6em .2em;}
+.epaper {top: 48px;}
+.visitors .items p span {font-size: 1.5em;}
+.search-help .doll IMG,
+.search-nodata .doll IMG {width:100% ;height:auto;}
+.smart-search .item .box-content {min-height:9em;}
+.LegalAid {width:100%;}
+.law-reg .input-law {width: 80%;}
+.law-reg-content {margin-left:3.5em;} /* 20200527調整 chrome字型放大 */
+.website {padding:30px;}
+.website .dp1 {float:left; width:23%; margin-right:13px;}
+.website .col {columns: 3;	-webkit-columns: 3;	-moz-columns: 3;}
+.website .col4 {columns: 3;	-webkit-columns: 3;	-moz-columns: 3;}
+.linkbanner .content .imgTxt{width:auto;}
+}
+
+@media (max-width: 991px) {
+.menu li > a {padding: 0px 12px;}
+.logo IMG {width:47%; height:47%; margin-top:10px; margin-left:25px;}
+.navbar-header {height:auto; padding:.3rem;}
+.BtnKeyword {max-width: inherit;word-break:break-all;}
+.content {min-height: 480px;}
+.section-law .smartSearch .tab-content .tab-pane {position: inherit;}
+.section-law .smartSearch .tab-content .tab-pane IMG {position: inherit !important;}
+.law-tool {
+	float: inherit;
+	padding: 0;
+	margin: 0 0 -.5em 0;
+	display: block;
+	text-align: center;
+}
+.law-reg .input-law {width: 100%;}
+.law-reg .FileList label {
+	clear: both;
+	width: auto;
+	padding-left: 0;
+	margin: 0;
+}
+.law-reg .FileList ul {clear: both;}
+.law-reg-content {margin-left:0;} /* 20200527調整 chrome字型放大 */
+.law-agree .col-th {width:100%; float:none; text-align:left;}
+.law-agree .col-td {width:100%; float:none;}
+.law-search {
+	width: 100%;
+	margin: 0 auto;
+}
+.law-search > .btn {
+	margin: 1em auto 0 auto;
+	display: block;
+}
+.btnZone .btn {
+	padding-left: .4em;
+	padding-right: .4em;
+}
+.btnSingle .btn {width: 10.8em !important; white-space: nowrap;}
+.law-help h4 {margin-top: 1em;}
+.law-help > li {
+	width: 100%;
+	float: none;
+}
+.fatfooter {font-size:1em;}
+.fatfooter ul {padding: .5em 0;}
+.fatfooter ul > li {
+	padding: 0;
+	width: 33.33%;
+}
+.fatfooter ul > li.nolink {padding: .35em .2em;}
+.fatfooter ul > li > ul a {font-size: 0.875rem;}
+.fatfooter ul > li > ul {margin-left:-.2em;}
+.epaper {
+	background-color: transparent;
+	clear: both;
+	width: 100%;
+	position: relative;
+	top: 0px;
+	right: 0px;
+	border-top: #5ca9a9 1px solid;
+}
+.epaper h2 {text-align: center;}
+.visitors .img-doll {display: none;}
+.visitors .items {
+	padding: 0px 2px;
+	width: 25%;
+}
+.copyrights .logo-box {position: relative; margin-left:1.5em;}
+.loginZone {width: 100%;}
+.leftMemDoc h3 .btn{float: none;}
+.search-nodata p {margin: 1.5em auto;}
+.statement{padding:0;}
+.website {padding:0px; background:none; border:none;}
+.website .dp {margin:1em 0;}
+.website .dp1 {float:none; width:auto; margin-right:0;}
+.website h3 {margin-top:1em;}
+.website li {border-bottom:none;}
+.website .col {columns: 2;	-webkit-columns: 2;	-moz-columns: 2;}
+.website .col4 {columns: 2;	-webkit-columns: 2;	-moz-columns: 2;}
+.linkbanner .content .row{border-bottom:none;}
+.linkbanner .content .row .col-lg-6:nth-child(2) {border-left:none;}
+.linkbanner .content .row .col-xs-12,
+.linkbanner .content .row .col-lg-12 {border-bottom:#c5c5c5 2px dotted;}
+/*.linkbanner .content .row:nth-child(3) .col-xs-12:last-child {border-bottom:none;}*/
+/* 靜態頁面 */
+.versionInfo IMG {width:95% ;height:auto;}
+.versionInfo .imgNote {width:100%;}
+}
+@media (max-width: 781px) {
+.text-con .left,
+.text-con .col-sm-9 {width:100%;}
+}
+@media (max-width: 767px) {
+.navbar-header {height:auto; padding:.5rem 0;}
+.navbar>.container {flex-wrap:nowrap;}
+h1.logo {margin-top: 0px;}
+.logo IMG {width:90%; height:90%;}
+.container {
+	max-width: 100%;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.menu ul {
+	/*display: block;*/
+	margin: 0 -15px;
+	border-top:1px solid #e7e7e7;
+}
+.menu li {
+	/*clear: both;*/
+	width: 100%;
+	border-bottom: #5ca9a9 1px solid;
+	background-color: #057B7B;
+}
+.menu li > a {
+	padding: 0px 50px;
+	display: block;
+}
+.menu .topmenu,
+.menu .topmenu > a,
+.menu .topmenu > a:visited {
+	background-color: #444;
+	border-bottom-color: #777;
+}
+.content {min-height: inherit;}
+.law-tool .share-bar {margin: 0;}
+.s-facebook IMG,
+.s-twitter IMG,
+.s-googleplus IMG,
+.s-line IMG,
+.s-pdf IMG {margin-top:0;}
+.s-pdf {display:inline-block;}
+.text-con .text-title h2 {font-size: 1.25em;}
+.text-con .text-title h2 small {
+	display:block;
+	margin-top:.3em;
+	line-height:140%;
+}
+.law-reg { padding:0; margin:0; border:none; background:none; box-shadow:none;}
+.law-reg .input-law Input[type='text'] {width: 80%;}
+.law-search-no {display:block;}
+/*.law-reg-content {width: 105%;padding: 0px; margin-left:-7px;}*/
+/*.law-reg-content {width: 100%;padding: 0px;}*/
+.law-reg-content {margin-left:0;} /* 20200527調整 chrome字型放大 */
+ul.law-help {width: 100%;margin: 1em auto 0 auto;}
+.LegalAid .doll, .LegalAid .doll-top{display:none;}
+.sitemap .dl-horizontal dt {width: inherit; float: inherit; text-align:inherit;}
+.sitemap .dl-horizontal dd {margin-left: inherit; margin-bottom:.5em;}
+.sitemap .dl-horizontal dd:last-child {margin-bottom:0;}
+.pageZone .pager li > a {padding: 6px 8px; margin:0 4px;}
+.pageZone .pageinfo {
+	clear: both;
+	display: block;
+	margin-top: .5em;
+}
+.btnZone .btn {
+	padding-left: 0;
+	padding-right: 0;
+	margin: .2em;
+	width: 5.2em;
+}
+.btnZone .btn-mobile { width:auto; padding-right:.5em; padding-left:.5em;}
+.fatfooter {font-size:1em;}
+.fatfooter ul {padding: .5em 0 0 0;}
+.fatfooter ul > li {margin-bottom:.3em;}
+.fatfooter ul > li.nolink {padding: .2em .2em;}
+.fatfooter ul > li > ul a {
+	font-size:0.75rem;
+	margin-bottom:.1rem;
+}
+.epaper .col-md-4 {padding: 4px 0px;}
+.notes {font-size:85%;
+	background-color: #449c9c;
+	color: #fff;
+}
+.notes li {padding:3px 0;}
+.notes li a,
+.notes li a:hover,
+.notes li a:visited {
+	color:#FF6;
+	text-decoration:underline;
+}
+.copyrights {font-size:85%;}
+.loginZone h3 {
+	padding:6px;
+	font-size:large;
+}
+.loginZone p {padding: 1em;}
+.leftMemDoc h3 .btn{float: right;}
+.smart-search .item {margin-bottom: 10px;}
+.smart-search .row{ padding-left:10px; padding-right:10px;}
+.smart-search .col-xs-6{ padding-left:5px; padding-right:5px;}
+.smart-search .item .box-content {min-height:12em;}
+.search-path {padding: 20px 0;}
+.website .col {columns: 1;	-webkit-columns: 1;	-moz-columns: 1;}
+.website .col4 {columns: 1;	-webkit-columns: 1;	-moz-columns: 1;}
+.linkbanner .content{ border:none;}
+.linkbanner .content .row .col-xs-12,
+.linkbanner .content .row .col-lg-12 {padding:20px 10px;}
+.linkbanner .content .img{float:none; margin-top:0; padding-top:0; padding-bottom:0;}
+.linkbanner .content .row:nth-child(7) .img IMG,
+.linkbanner .content .row:nth-child(8) .img IMG,
+.linkbanner .content .row:nth-child(9) .img IMG {width:100%; height:100%;}
+.linkbanner .content .imgTxt{float:none; padding-top:0; padding-bottom:0;}
+.law-result .glyphicon-map-marker,
+.glyphicon-send {display:none;}
+.fa-paperclip,
+.fa-angle-double-right {
+	background:none;
+	width:inherit;
+	height:inherit;
+}
+.fa-paperclip:before{content:"\f0c6";}
+.fa-angle-double-right:before{content:"\f101";}
+}
+
+@media (max-width: 590px) {
+/*.navbar-toggler {margin-top: 20px;}*/
+/*.logo IMG {
+	width: 100%;
+	height: 100%;
+}*/
+/*.law-reg-content {width: 105%;padding: 0px; margin-left:-7px;}*/
+.law-reg-content {margin-left:0;} /* 20200527調整 chrome字型放大 */
+}
+
+/*@media (max-width: 361px) @media (max-width: 481px) {
+.law-reg-content {width: 113%;padding:0 5px; margin-left:-20px; letter-spacing:-.7px;}
+}*/
+
+/*** 表格設定 ***/
+@media (max-width: 1200px) {
+.tab-NewsDetail {width:100%;}
+.tab-qry td .row Input[type='checkbox'] + label {margin-right: 0;}
+.tab-qry td FieldSet li.col-lg-4 {width:50%;}
+}
+
+@media (max-width: 991px) {
+.tab-list > thead .btnDataZone select {font-size: 0.75em;}
+.tab-list > thead .btnDataZone .btn,
+.tab-list > thead .btnDataZone .btn:visited {
+	height: 20px;
+	line-height: 18px;
+	font-size: 0.75em;
+}
+.tab-list > thead .btnDataZone .glyphicon-print {
+	background:url(../images/icon/glyphicon-print2.png) 0 1px no-repeat;
+	width:13px;
+	height:13px;
+	display:inline-block;
+}
+.tab-list > thead .btnDataZone .glyphicon-download-alt {
+	background:url(../images/icon/glyphicon-download-alt2.png) 0 3px no-repeat;
+	width:12px;
+	height:12px;
+	display:inline-block;
+}
+.tab-mail td #txtSubject {width:100%;}
+.tab-mail td #txtContent {width:100%;}
+.tab-mail td #txtNickName {width:50%;}
+.tab-mail td #txtEMail {width:50%;}
+}
+
+@media (max-width: 767px) {
+.tab-list thead {display: none;}
+.tab-list > tbody > tr > td {border-top: none;}
+.tab-list > tbody > tr {border-bottom:#cce6e6 1px solid;}
+.tab-news td:nth-child(1),
+.tab-news td:nth-child(2),
+.tab-news td:nth-child(3) {
+	float: left;
+	border: none;
+}
+.tab-news td:nth-child(4) {
+	clear: both;
+	border: none;
+	display: block;
+	width: 100%;
+	padding-top: 0;
+}
+.tab-central td:nth-child(2) {display: none;}
+.tab-edit {
+	background-color: inherit;
+	border: none;
+}
+.tab-edit,
+.tab-edit thead,
+.tab-edit tbody,
+.tab-edit th,
+.tab-edit td,
+.tab-edit tr {
+	display: block;
+	width: 100%;
+}
+.tab-edit tr {margin-bottom: 1em; border-style: none;}
+.tab-edit tr:last-child {margin-bottom: 0;}
+.tab-edit > tbody > tr > th {
+	text-align: left;
+	font-weight: 800;
+	border-radius: 30px;
+	border:none;
+	background-color:#d6ebeb;
+	padding:.3em 1em;
+}
+.tab-edit > tbody > tr > td { border:none;}
+.tab-qry {
+	background-color: inherit;
+	border: none;
+}
+.tab-qry th,
+.tab-qry td,
+.tab-qry tr {
+	display: block;
+	width: 100%;
+}
+.tab-qry>:not(caption)>* {border-width: 0;}
+.tab-qry > thead > tr > th,
+.tab-qry > tbody > tr > th {
+	text-align: left;
+	font-weight: 800;
+	border-radius: 30px;
+	background-color:#d6ebeb;
+	padding:.3em 1em;
+	margin-bottom:.2em;
+	border: none;
+}
+.tab-qry > tbody > tr > td { border:none;}
+.tab-qry tr {margin-bottom: 1em;}
+.tab-qry tr:last-child {margin-bottom: 0;}
+.tab-qry td FieldSet {
+	padding:.35em 1em .75em;
+	margin:0 -.5em 8px -.5em;
+}
+.tab-qry td FieldSet ul {padding:0 1em;}
+.tab-qry td FieldSet li.col-lg-4 {width:100%;}
+.tab-qry td Legend {margin:0 -.5em;}
+.tab-qry td .unit-checkbox {margin-left:.5em;}
+.tab-qry td Input[type='text'] {
+	border:#6ab6b6 1px solid;
+	background-color:#FFF;
+}
+.tab-data > thead > tr > th,
+.tab-data > tbody > tr > th,
+.tab-data > tfoot > tr > th,
+.tab-data > thead > tr > td,
+.tab-data > tbody > tr > td,
+.tab-data > tfoot > tr > td {
+	font-family:"微軟正黑體";
+	border-color: #bad5d5;
+	padding: 3px;
+}
+}
+
+
+/****** 表格 內容 ******/
+/*** law ***/
+@media (max-width: 991px) {
+.law-content .row {margin: 0 !important;}
+.law-content .row > .col-no {
+	clear: both;
+	width: auto !important;
+	padding-left: 0;
+}
+.law-content .row > .col-fun {
+	float: none;
+	margin-bottom: .5em;
+}
+.law-content .row > .col-data {clear: both;}
+/*.law-content h3 {font-size: large!important; padding: 4px 0!important;}
+.law-content h3.char-2 {padding-left: 0em !important;}
+.law-content h3.char-3 {padding-left: 0em !important;}
+.law-content h3.char-4 {padding-left: 0em !important;}
+.law-content h3.char-5 {padding-left: 0em !important;}
+.law-content h3.char-6 {padding-left: 0em !important;}*/
+.law-content .h3 {font-size: large!important; margin-left:2.5em !important; padding-left:2em !important;}
+.law-content .law-rela .h3,
+.law-content .law-SingleRela .h3 {margin-left:0 !important; text-indent:0 !important;}
+.law-content .char-2{padding-left:3em !important;}
+.law-content .char-3{padding-left:6em !important;}
+.law-content .char-4{padding-left:9em !important;}
+.law-content .char-5{padding-left:12em !important;}
+.law-content .char-6{padding-left:15em !important;}
+.jud-content .row:nth-child(3) .col-td {
+	clear: both;
+	float: none;
+	width: auto;
+	margin-left: 0em;
+}
+.jud-content .row:nth-child(3) .text-pre {margin-left: 0em;}
+.jud-extent {width:95% !important;}
+/*.jud-extent .text-pre {display:inline-block; margin:0 !important;}*/
+.jud-extent .row .col-th {float:left; width:5em; margin:0px;padding:0;text-align: right;}
+.jud-extent .text-pre {display: inline-block;}
+.jud-extent .font-s .text-pre { margin-left:0 !important; float:left !important; display: inline-block;}
+.jud-extent ul {margin-left: 1.5em;}
+.jud-extent ul li {list-style: disc;}
+.folder-menu {text-align:left;}
+
+.law-article {width:100% !important;}
+}
+
+@media (max-width: 767px) {
+/*.law-content,.law-history {padding:0 .5em;}*/
+/*.text-pre, .font-s .col-th {font-size: .625em;}
+.jud-extent .text-pre {font-size:.5625em;}*/
+.text-pre, .font-s .col-th {font-size: 1em;}
+.jud-extent .text-pre {font-size:1em;}
+.jud-content .row:nth-child(3) {display: none;}
+}
+
+@media (max-width: 590px) {
+.text-pre, .font-s .col-th {font-size: .625em;}
+.jud-extent .text-pre {font-size:.5625em;}
+/*.law-content .text-pre {font-size: 53%;}
+.text-pre {font-size: 47%;}*/
+}
+

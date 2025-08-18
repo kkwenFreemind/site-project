@@ -1,0 +1,90 @@
+﻿.law-tool {
+	border: 1px solid #6d5f3c;
+	background-color: #a69c83;
+	width: 100%;
+	font-family: "微軟正黑體";
+	font-weight: 800;
+}
+.law-tool .pull-left {
+	margin-left: -1px;
+}
+.law-tool .pull-right {
+	margin-right: -1px;
+}
+.law-tool .btn-default {
+	background-color: #998e72;
+	color: #fff;
+	border-color: #6d5f3c;
+	border-radius: 0;
+	padding: 5px 8px;
+	border-top: none;
+	border-bottom: none;
+}
+.law-tool .btn-default:hover {
+	border-color: #6d5f3c;
+	background-color: #827555;
+}
+.law-tool .btn-default:active {
+	color: #fff;
+}
+.law-tool .fa {
+	font-size: 11pt;
+	color: #fff;
+	vertical-align: middle;
+	background-color: inherit;
+	padding: 0 !important;
+	font-weight: normal;
+}
+.law-tool .btn-print:hover {background-color: #5dad16;}
+.law-tool .btn-word:hover {background-color: #0c6acb;}
+.law-tool .btn-pdf:hover {background-color: #cb0c0c;}
+.law-tool .btn-share:hover {background-color: #ff9000;}
+.law-tool .open>.dropdown-toggle.btn-share:focus,
+.law-tool .open>.dropdown-toggle.btn-share {background-color: #ff9000; color:#fff;}
+.law-tool .col-title {
+	font-family: "微軟正黑體";
+	font-weight: 800;
+}
+.law-tool .col-title a {
+	color: #C0392B;
+	text-decoration: underline;
+}
+.law-tool .col-title a:hover {
+	color: #a94442;
+}
+/* dialog */
+.tool-dialog {
+	position: absolute;
+	top: 3em;
+	z-index: 2;
+	padding: 0.5em 1em;
+	background-color: #f0ebde;
+	border: solid 1px #6d5f3c;
+	box-shadow: 4px 4px 4px #a79f95;
+}
+.tool-dialog .btn-default {
+	color: #fff;
+	background-color: #8390a6;
+	border-color: #566174
+}
+.tool-dialog .btn-default:hover {
+	color: #fff;
+	background-color: #6c788d;
+	border-color: #566174;
+}
+.tool-dialog .btn-default:active, .tool-dialog .btn-default:focus {
+	color: #fff;
+	background-color: #6c788d;
+	border-color: #566174;
+}
+
+/* 下拉選單 */
+.law-tool .dropdown-menu {font-size:1.25em;font-family:"微軟正黑體";min-width: initial;right:0; top:24px; text-align:center; border-radius:0; width:160px; background-color:#f0ebde;border-color:#6d5f3c;}
+.law-tool .dropdown-menu a{display:inline-block;}
+.law-tool .dropdown-menu a:hover{cursor:pointer;}
+.law-tool .dropdown-menu .fa{margin:0 .1em; color:#fff; width:1.5em; height:1.5em; line-height:1.5em; border-radius:3px;}
+.law-tool .dropdown-menu .fa-facebook {background-color:#3f60a8;}
+.law-tool .dropdown-menu .fa-twitter {background-color:#319bee;}
+.law-tool .dropdown-menu .fa-google-plus {background-color:#d33e3a;}
+.law-tool .dropdown-menu .fa-plurk {background-color:#e02f32; font-weight:800;font-family: Verdana, Geneva, sans-serif;}
+.law-tool .dropdown-menu .fa-line {background-color:#32b62c; font-weight:800;font-family: Verdana, Geneva, sans-serif;}

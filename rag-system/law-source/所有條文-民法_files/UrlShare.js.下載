@@ -1,0 +1,65 @@
+﻿
+/******************************************************
+//取得Google Shortener API (JS AJAX)
+******************************************************/
+function GetShortener(longUrl, type, linkkey, device) {
+    longUrl = longUrl.replace("ot=in", ""); //**網址中有ot=in要清掉
+    var shorturl = "";
+    /*20250107因為免費版的問題而停用*/
+  //  $.ajax({
+  //      type: "POST",
+  //      async: false,
+  //      url: "../controls/GetUrlShortener.ashx",
+  //      data: { longurl: longUrl, type: type, linkkey: linkkey,  device: device }
+  //  }).done(function (data) {
+		//if(data.substr(0,4)!="http")
+		//	shorturl = longUrl;
+		//else
+		//	shorturl = data;
+  //  }).fail(function (xhr, ajaxOptions, thrownError) {
+  //      //alert("資料錯誤，請重試:" + xhr.status + xhr.responseText + ":" + thrownError);
+  //      shorturl = longUrl;
+  //  });
+    return shorturl = longUrl;
+}
+
+/******************************************************
+//分享至各社群
+******************************************************/
+function shareTo(sharetype, shorturl,type,linkkey,longurl)
+{
+    var shareurl = "";
+    if (shorturl == "") {
+        //var pathname = location.pathname + location.search;// '/test.html?ty=C'
+        var device = "C";
+        //if (location.href.toUpperCase().indexOf("MOBILE") > -1) device = "M";
+        if (longurl == "")
+            shorturl = GetShortener(window.location.href, type, linkkey, device);
+        else {
+            shorturl = GetShortener(longurl, type, linkkey, device);
+        }
+    }
+    switch (sharetype)
+    {
+        case "FB":
+            shareurl = "http://www.facebook.com/sharer/sharer.php?u=";
+            break;
+        case "TWITTER":
+            shareurl = "http://twitter.com/home/?status=";
+            break;
+        case "PLURK":
+            shareurl = "http://www.plurk.com/?qualifier=shares&status=";
+            break;
+        //case "GOOGLEPLUS":
+        //    shareurl = "https://plus.google.com/share?url=";
+        //    break;
+        case "LINE":
+            shareurl = "http://line.naver.jp/R/msg/text/?%0D%0A";
+            break;
+        default :
+            break;
+    }
+    shareurl += shorturl;
+    window.open(shareurl, '', 'width=600,height=400');
+   // return shareurl;
+}

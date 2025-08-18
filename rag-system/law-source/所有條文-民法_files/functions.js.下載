@@ -1,0 +1,207 @@
+﻿/******************************************************
+* 功能選單狀態切換
+******************************************************/
+function SetNavigationStatus(index) {
+    $(".nav-menu li").removeClass("active");
+    $(".nav-menu li").eq(index).addClass("active");
+}
+
+/******************************************************
+*   全選項目切換
+******************************************************/
+function BindCheckAllEvent(crlALL, crlItems) {
+    $(crlALL).on('click', function (event) {
+        $(crlItems).prop('checked', $(this).prop('checked'));
+    });
+
+    $(crlItems).on('click', function (event) {
+        if ($(crlItems).filter(':checked').length == $(crlItems).length)
+            $(crlALL).prop('checked', true);
+        else
+            $(crlALL).prop('checked', false);
+
+    });
+}
+
+
+/******************************************************
+*   取得網址後的參數
+******************************************************/
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    return getAssignUrlParameter(sPageURL, sParam);
+}
+function getAssignUrlParameter(sPageURL, sParam) {
+    var sURLVariables = sPageURL.split('&');
+    var vValue = "";
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            vValue = sParameterName[1];
+            break;
+        }
+    }
+    return vValue.replace("undefined", "");
+}
+//取得目前網頁名稱
+function getPageName() {
+    var path = window.location.pathname;
+    return path.split("/").pop();
+}
+function getPageName(path) {
+    return path.split("/").pop();
+}
+
+/******************************************************
+//新增相關法條
+******************************************************/
+function CloneRelaLaw($parent) {
+    var $content = $(".dvRelaLaw:first").clone();
+    $content.find("a").removeClass("AddRelaLaw").addClass("RemoveRelaLaw");
+    $content.find("i").removeClass("fa-plus").addClass("fa-minus");
+    $content.find(".btn").removeClass("btn-babyblue").addClass("btn-red");
+    $content.find("input").val("");
+    $content.appendTo($parent);
+    //綁事件：推薦字詞
+    AutoLawName("input[name='txtlca']:last", "../controls/GetLawNameList.ashx");
+}
+
+/******************************************************
+//新增參數
+******************************************************/
+function InsertParam(key, value) {
+    key = encodeURI(key); value = encodeURI(value);
+    var url = document.location.href.split('?')[0];
+    var kvp = document.location.search.substr(1).split('&');
+
+    var i = kvp.length; var x; while (i--) {
+        x = kvp[i].split('=');
+
+        if (x[0] == key) {
+            x[1] = value;
+            kvp[i] = x.join('=');
+            break;
+        }
+    }
+
+    if (i < 0) { kvp[kvp.length] = [key, value].join('='); }
+
+    return url + "?" + kvp.join('&');
+}
+
+
+/******************************************************
+//HTMLEncode跟Decode
+******************************************************/
+//查詢結果(左側選單)特殊字符取代
+function htmlEncode(value) {
+    r = $('<div/>').text(value).html()
+    switch (value) {
+        case "最高行政法院|(含改制前行政法院)裁判":
+        case "臺北高等行政法院高等行政訴訟庭|(含改制前臺北高等行政法院)":
+        case "臺中高等行政法院高等行政訴訟庭|(含改制前臺中高等行政法院)":
+        case "高雄高等行政法院高等行政訴訟庭|(含改制前高雄高等行政法院)":
+        case "高雄高等行政法院高等行政訴訟庭|(含改制前高雄高等行政法院)":
+        case "高等行政法院高等庭裁判|(含改制前高等行政法院)":
+        case "高等行政法院高等行政訴訟庭|(含改制前高等行政法院)裁判":
+            r = r.replace('|', '<br />')
+            break;
+        case "最高行政法院 (含改制前行政法院)":
+            r = r.replace("最高行政法院 (含改制前行政法院)裁判")
+            break;
+        default:
+    }
+    return r;
+}
+
+function htmlDecode(value) {
+    return $('<div/>').html(value).text();
+}
+
+/******************************************************
+//是否含有特殊字元
+******************************************************/
+function hasInvalidChar(keys) {// ~ ’@ # $ % ^ * _ = \ > < / ? “ [ ] { } : ; , . 
+    var notAllow = "[\,\<\>\;\'\"\@\#\!\~\%\\\~\*\^\=\?]";// '/'可以
+    var ptrn = "[^\u3001\uff09\uff08\u25cb\u300c\u300d\u4e00-\u9fff0-9a-zA-Z\(\)&\+\-\\s\.]";
+
+    var regex = new RegExp(notAllow);
+    return regex.test(keys);
+}
+/******************************************************
+//利用進階/簡易查詢-紀錄cookie
+******************************************************/
+function searchByAdvanced(type, isAdvanced) {
+    var cookieName = type + "_ad";//ex:flaw_ad為法規cookie
+    if (isAdvanced) {
+        var d = new Date();
+        d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));//保存1個月
+        var expires = "expires=" + d.toGMTString();
+        //加入cookie
+        document.cookie = cookieName + "=1; expires=" + expires + ";path=/";
+    }
+    else
+        document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + ";path=/";
+}
+function isAdvancedSearch(type) {
+    var cookieName = type + "_ad";//ex:flaw_ad為法規cookie
+    //alert(document.cookie);
+    if (document.cookie.indexOf(cookieName + "=1") > -1) {
+        return true;
+    }
+    else
+        return false;
+}
+
+
+function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var ca = document.cookie.split(';');
+    var val = "";
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(name) == 0)
+            val = c.substring(name.length, c.length);
+    }
+    if (val != "" && val != "undefined")
+        return val;
+    else
+        return "";
+}
+
+function setCookie(cookieName, cookieValue, exdays) {
+    if (document.cookie.indexOf(cookieName) >= 0) {
+        var expD = new Date();
+        expD.setTime(expD.getTime() + (-1 * 24 * 60 * 60 * 1000));
+        var uexpires = "expires=" + expD.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + ";domain=legal.judicial.gov.tw;" + uexpires;
+    }
+    if (exdays === "") {
+        document.cookie = cookieName + "=" + cookieValue + "; path=/;domain=legal.judicial.gov.tw;";
+    }
+    else {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + "; path=/;domain=legal.judicial.gov.tw; " + expires;
+    }
+}
+
+function setCookieOnGlobal(cookieName, cookieValue, exdays) {
+    if (document.cookie.indexOf(cookieName) >= 0) {
+        var expD = new Date();
+        expD.setTime(expD.getTime() + (-1 * 24 * 60 * 60 * 1000));
+        var uexpires = "expires=" + expD.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + ";domain=judicial.gov.tw;" + uexpires;
+    }
+    if (exdays === "") {
+        document.cookie = cookieName + "=" + cookieValue + "; path=/;domain=judicial.gov.tw;";
+    }
+    else {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cookieName + "=" + cookieValue + "; path=/;domain=judicial.gov.tw; " + expires;
+    }
+}

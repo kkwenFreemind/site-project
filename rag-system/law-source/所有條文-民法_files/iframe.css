@@ -1,0 +1,98 @@
+﻿/*** 基本 開始 ***/
+html, body{
+    margin:0;
+    padding:0;
+    font-size:16px;
+    font-family: Arial, "細明體"; /*Consolas, monaco, monospace,"細明體";*/
+    color: #000;
+    background-color: #f3faf4;
+    /*max-width:920px;*/
+	/*max-width:85%;*/
+    margin:0px auto;
+}
+form {font-size:101%;/*IE8以後字體會面模糊.放大一點點就會正常*/}
+a{color:#0000bf;}
+.container a:not(.btn):not(.page):visited {
+    color: #800080;
+}
+a:hover,a:focus {text-decoration: none; color:#F60;}
+input[type=checkbox], input[type=radio] {
+    /* checkbox 跟 label對齊*/
+    vertical-align: bottom;
+    position: relative;
+    margin-right: 4px;
+    width: 1.2em;
+    height: 1.2em;
+    *overflow: hidden;
+}
+pre {
+    font-family: "細明體";
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 1em;
+    line-height: 170%;
+    background-color: inherit;
+    border: inherit;
+}
+
+
+mark, .highlight {
+    padding: 0;
+    color: red;
+    background-color: yellow;
+}
+/*** 基本 結束 ***/
+
+
+
+/*** 主內容 開始 ***/
+.container {
+    font-size: 0.938em;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+/*** 主內容 結束 ***/
+
+
+/*** 其他 ***/
+/*英譯法規註記*/
+.eng, .fei {
+	background-color: #EF6601;
+	color: #FFFFFF !important;
+	font-family: 微軟正黑體;
+	font-size: 0.875em;
+	text-decoration: none;
+	font-weight: normal;
+	display: inline-block;
+	text-align: center;
+	line-height: 1.3em;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 15px;
+}
+.eng {background-color: #EF6601;}
+/*廢止法規註記*/
+.fei {background-color: #900404;}
+
+/*紅字標註*/
+.redAlert{color:#FF0000; margin-left: 0 !important;}
+/* 迴紋針 */
+.fa-paperclip {
+    color: #000000;
+}
+
+/* PRE */
+.text-pre {
+    white-space: pre;
+    font-family: "細明體";
+    line-height: 180%;
+}
+.bg-danger {
+	background-color: #fff0da;
+}
+.text-danger {
+	color: #ad1818;
+	font-family: "微軟正黑體";
+}

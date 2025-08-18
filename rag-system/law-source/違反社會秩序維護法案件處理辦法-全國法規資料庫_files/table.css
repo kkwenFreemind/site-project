@@ -1,0 +1,252 @@
+﻿/* 表格 表頭 */
+.table-title {
+	background-color: #f5fcfb;
+	border: 1px solid #148383;
+	border-left-width:6px;
+	box-shadow:3px 3px 0px #e8f3f1;
+	padding:10px;
+	margin-bottom:30px;
+}
+.table-title .table {
+	word-break: normal;
+	word-wrap: break-word;
+	padding:0;
+	margin:15px auto;
+}
+.table-title .table th,
+.table-title .table td {
+	border:none;
+	padding:.3em 0;
+}
+.table-title .table th {
+	text-align: right;
+	background-color: transparent;
+	font-weight: 800;
+    width:14%;
+}
+.table-title .table td ul {margin-left: 1.5em;}
+.table-title .table td ul li {list-style: disc;}
+
+/* 表格 清單 */
+.text-con TABLE {
+	font-family:"細明體";
+	--bs-table-bg: initial;
+	--bs-table-color: initial;
+	--bs-table-hover-bg: initial;
+	/*--bs-table-border-color: initial;*/
+}
+.text-con TABLE th, .text-con TABLE .th {white-space: nowrap;}
+.tab-list {--bs-table-border-color:#cce6e6;}
+.tab-list > thead {
+	background-color:#f1f7f7;
+	border-bottom:#cce6e6 3px solid;
+	position:relative;
+}
+.tab-list > thead > tr > th {
+	text-align: center;
+	font-family: Microsoft JhengHei;
+	color:#057b7b;
+	vertical-align:middle;
+	height:40px;
+}
+.tab-list > thead > tr > th:last-child {position: relative;}
+.tab-list > thead > tr > .th {
+	text-align: center;
+	font-family: Microsoft JhengHei;
+	color:#057b7b;
+	vertical-align:middle;
+	height:40px;
+}
+.tab-list > thead > tr > .th:last-child {position: relative;}
+.tab-list > tbody > tr:hover {background-color:#f7f7f7;}
+.tab-list > tbody > tr > td {border-top:1px solid #cce6e6; border-bottom:none;}
+.tab-list a{word-break: break-all;}
+.tab-list > thead .btnDataZone {position:absolute; top:6px; right:10px;}
+.tab-list > thead .btnDataZone select{font-size:0.9375em; vertical-align:middle; color:#000; font-weight:bold;}
+.tab-list > thead .btnDataZone .btn,
+.tab-list > thead .btnDataZone .btn:visited {
+	height:25px;
+	padding:0 .5em;
+	margin:0 2px;
+	font-size:0.9375em;
+	background-color: #2969c0;
+	border-color: #2969c0;
+	color:#fff;
+}
+.tab-list > thead .btnDataZone .btn:hover,
+.tab-list > thead .btnDataZone .btn:focus {
+	background-color: #1358b6;
+	border-color: #1358b6;
+}
+.tab-list > thead .btnDataZone .btn-sort,
+.tab-list > thead .btnDataZone .btn-sort:visited {
+	background-color:#057b7b;
+	border-color:#057b7b;
+}
+.tab-list > thead .btnDataZone .btn-sort:hover,
+.tab-list > thead .btnDataZone .btn-sort:focus {
+	background-color: #006969;
+	border-color: #006969;
+}
+/* 網路字型轉圖 */
+.tab-list > thead .btnDataZone .glyphicon-print:before,
+.tab-list > thead .btnDataZone .glyphicon-download-alt:before {content: normal;}
+.tab-list > thead .btnDataZone .glyphicon-print {
+	background:url(../images/icon/glyphicon-print.png) 0 3px no-repeat;
+	width:17px;
+	height:17px;
+	display:inline-block;
+}
+.tab-list > thead .btnDataZone .glyphicon-download-alt {
+	background:url(../images/icon/glyphicon-download-alt.png) 0 2px no-repeat;
+	width:15px;
+	height:15px;
+	display:inline-block;
+}
+
+/* 最新訊息 */
+.tab-news th:nth-child(4) {text-align: left; width: 75%;}
+.tab-news td:nth-child(1),
+.tab-news td:nth-child(2),
+.tab-news td:nth-child(3) {white-space: nowrap; text-align: center;}
+.tab-NewsDetail {width:82%; margin-left:auto; margin-right:auto;}
+/* 中央法規 */
+.tab-central > tbody > tr > td a{line-height:150%;}
+.tab-central th:nth-child(3) {text-align: left; width:95%;}
+.tab-central td:nth-child(1),
+.tab-central td:nth-child(2) {white-space: nowrap; text-align: center;}
+.tab-central td:nth-child(2) {/* line-height: 1.2em; padding-top:.35em;*/}
+/* 查詢結果 */
+.tab-result th:nth-child(2) {text-align: left; width:95%;}
+.tab-result td:nth-child(1),
+.tab-result td:nth-child(3),
+.tab-result td:nth-child(4) {white-space: nowrap; text-align: center;}
+/* 創意教案 */
+.tab-case th:nth-child(3) {text-align:left; width:90%;}
+.tab-case td:nth-child(1),
+.tab-case td:nth-child(2),
+.tab-case td:nth-child(4) {white-space: nowrap; text-align: center;}
+/* 電子報 */
+.tab-epaper th:nth-child(3) {text-align: left; width: 75%;}
+.tab-epaper td:nth-child(1),
+.tab-epaper td:nth-child(2),
+.tab-epaper td:nth-child(4) {white-space: nowrap; text-align: center;}
+
+/* 表格 內容 */
+.tab-edit > thead > tr > th,
+.tab-edit > tbody > tr > th,
+.tab-edit > tfoot > tr > th,
+.tab-edit > thead > tr > td,
+.tab-edit > tbody > tr > td,
+.tab-edit > tfoot > tr > td {
+	border-color: #bbb;
+}
+.tab-edit {
+	word-break: normal;
+	word-wrap: break-word;
+}
+.tab-edit th {
+	text-align: right;
+	background-color: #f8f8f8;
+	font-weight: normal;
+    width:14%;
+}
+.tab-edit td ul {margin-left: 1.5em;}
+.tab-edit td ul li {list-style: disc;}
+
+/* 表格 查詢 */
+.tab-qry {background-color: #fff;border:1px solid #bad5d5;}
+.tab-qry > thead > tr > th,
+.tab-qry > tbody > tr > th,
+.tab-qry > tfoot > tr > th,
+.tab-qry > thead > tr > td,
+.tab-qry > tbody > tr > td,
+.tab-qry > tfoot > tr > td {
+	border-color: #bad5d5;
+	border-left:none;
+	border-right:none;
+	padding: 8px 15px;
+	vertical-align: middle;
+}
+.tab-qry th {
+	text-align: center;
+	background-color: #f1f7f7;
+}
+.tab-qry td .row div {margin:3px 0; padding-right:0;}
+/*.tab-qry td .text-danger{margin-left:-0.8em;}*/
+.tab-qry td .help-block {display: inline-block;}
+.tab-qry td FieldSet {
+	padding:.35em 2.5em .75em;
+	margin:0 2px 8px 2px;
+	border:1px solid #bad5d5;
+}
+.tab-qry td Legend {
+	float:inherit;
+	width:auto;
+	font-size:1em;
+	border:none;
+	margin:0 -2em;
+	padding:0 .5em;
+	font-weight:600;
+}
+.tab-qry td FieldSet:first-child {margin-bottom:1em;}
+.tab-qry td FieldSet li {margin:3px 0;}
+.tab-qry td .unit-checkbox {
+	margin-left:1em;
+	padding:5px 0;
+	background-color:#f1f7f7;
+	border-radius:10px;
+	margin-bottom:.5em;
+	color:#006060;
+}
+.tab-qry td ul.unit-horizontal-checkbox li {display:inline-block;}
+.tab-qry td span.glyphicon {vertical-align: text-top;}
+.tab-qry td .title {
+	width:2em;
+	margin-right:.3em;
+}
+.tab-qry td.input Input{ width:60%; margin-bottom:10px;}
+.tab-qry td Input[type='checkbox'] + label,
+.tab-qry td Input[type='radio'] + label {
+	margin-right: 0.8em;
+}
+.tab-qry td Input[type='text'] {
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	border:transparent 1px solid;
+	background-color:#d6ebeb;
+	padding:2px 5px;
+	font-family:"細明體";
+}
+/*.tab-qry td Input[type='text']:focus { border-color:#6ab6b6;}*/
+.tab-mail td #txtSubject {width:70%;}
+.tab-mail td #txtContent {width:70%;}
+.tab-mail td #txtNickName {width:50%;}
+.tab-mail td #txtEMail {width:50%;}
+.tab-mail .btn-Cet {display:inline-block;}
+
+/* 表格 靜態頁面 */
+.tab-data {background-color: #fff;border-color: #bad5d5;}
+.tab-data > thead > tr > th,
+.tab-data > tbody > tr > th,
+.tab-data > tfoot > tr > th,
+.tab-data > thead > tr > td,
+.tab-data > tbody > tr > td,
+.tab-data > tfoot > tr > td {
+	font-family:"微軟正黑體";
+	border-color: #bad5d5;
+	padding: 8px 15px;
+}
+.tab-data > thead > tr > th,
+.tab-data > tbody > tr > th,
+.tab-data > tfoot > tr > th {
+	background-color: #f1f7f7;
+	color: #135858;
+}
+.tab-data td:nth-child(1) {
+	font-weight:800;
+	white-space:nowrap;
+}
+.tab-digital td:nth-child(1),
+.tab-digital td:nth-child(2),
+.tab-digital td:nth-child(4) {white-space: nowrap; text-align: center;}
