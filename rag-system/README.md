@@ -2,6 +2,14 @@
 
 <div align="center">
 
+## ⭐ 支持專案 | Support the Project
+
+✨ 如果覺得這個專案對你有幫助，請幫我點個 Star ⭐ 支持一下！  
+這不只是鼓勵我，還能讓更多人看到這個專案，一起交流 RAG 的應用 🙌
+
+✨ If this project helps you, please give us a Star ⭐ to support!
+This not only encourages me, but also helps more people discover this project and exchange RAG applications together 🙌
+
 **🌍 多語言版本 | Multi-language**
 
 [![中文](https://img.shields.io/badge/語言-中文-red.svg)](README.md)
@@ -111,6 +119,16 @@ rag-system/
 ├── vector_db/              # 向量資料庫 | Vector database
 └── requirements.txt        # 依賴列表 | Dependencies
 ```
+
+## 📄 授權條款 | License
+
+本專案採用 CC-BY-NC 授權，歡迎學習與非商業使用。
+
+This project is licensed under CC-BY-NC, welcome for learning and non-commercial use.
+
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+
 
 ---
 

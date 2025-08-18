@@ -2,6 +2,8 @@
 
 <div align="center">
 
+**⭐ Please give us a Star | 請幫忙點星星 ⭐**
+
 **🌍 Multi-language | 多語言版本**
 
 [![中文](https://img.shields.io/badge/語言-中文-red.svg)](README.md)
@@ -386,6 +388,22 @@ You are a professional Taiwan legal assistant. Please answer questions based on 
 - 🎯 **Precise Matching**: Semantic understanding technology provides relevant legal article retrieval
 - 📚 **Knowledge Integration**: Structured legal knowledge system establishment
 - 🔍 **Complete Traceability**: Provides complete legal article source traceability mechanisms
+
+## 📄 License
+
+本專案採用 CC-BY-NC 授權，歡迎學習與非商業使用。
+
+This project is licensed under CC-BY-NC, welcome for learning and non-commercial use.
+
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+## ⭐ Support the Project
+
+✨ 如果覺得這個專案對你有幫助，請幫我點個 Star ⭐ 支持一下！
+這不只是鼓勵我，還能讓更多人看到這個專案，一起交流 RAG 的應用 🙌
+
+✨ If this project helps you, please give us a Star ⭐ to support!
+This not only encourages me, but also helps more people discover this project and exchange RAG applications together 🙌
 
 ## 🤝 Contributing
 
