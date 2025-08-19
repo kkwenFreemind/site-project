@@ -429,10 +429,6 @@ This project is licensed under CC-BY-NC, welcome for learning and non-commercial
 
 
 
----
-
-**注意 | Note**：請確保在生產環境中保護好您的 Gemini API Key，不要將其提交到版本控制系統中。
-Please ensure to protect your Gemini API Key in production environment and do not commit it to version control systems.
 
 ---
 
