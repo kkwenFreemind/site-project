@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Query System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #1d1d1f;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+            backdrop-filter: blur(20px);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .query-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #1d1d1f;
+            font-size: 1rem;
+        }
+
+        .query-input {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid rgba(0, 122, 255, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 120px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+        }
+
+        .query-input:focus {
+            outline: none;
+            border-color: #007aff;
+            box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+            background: white;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+            backdrop-filter: blur(20px);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #8e8e93 0%, #636366 100%);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #34c759 0%, #30d158 100%);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ff9500 0%, #ff6a00 100%);
+            color: white;
+        }
+
+        .sql-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sql-controls {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .sql-display-area {
+            margin-top: 25px;
+        }
+
+        .sql-content {
+            width: 100%;
+            padding: 20px;
+            border: 2px solid rgba(0, 122, 255, 0.2);
+            border-radius: 12px;
+            font-size: 14px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            min-height: 120px;
+            background: rgba(248, 249, 250, 0.9);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            backdrop-filter: blur(10px);
+        }
+
+        .sql-placeholder {
+            color: #8e8e93;
+            font-style: italic;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .sql-generated {
+            background: rgba(52, 199, 89, 0.05);
+            border-color: #34c759;
+            color: #1d7324;
+        }
+
+        .sql-help {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0, 122, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #007aff;
+            backdrop-filter: blur(10px);
+        }
+
+        .sql-help small {
+            color: #007aff;
+            font-weight: 500;
+        }
+
+        .results-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sql-display {
+            background: rgba(248, 249, 250, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #007aff;
+            margin: 20px 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            font-weight: 700;
+            color: #1d1d1f;
+            font-size: 0.9rem;
+        }
+
+        .data-table tr:hover {
+            background: rgba(0, 122, 255, 0.05);
+        }
+
+        .error {
+            background: linear-gradient(135deg, rgba(255, 69, 58, 0.1) 0%, rgba(255, 69, 58, 0.05) 100%);
+            color: #d70015;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #ff453a;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .success {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(52, 199, 89, 0.05) 100%);
+            color: #1d7324;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #34c759;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #007aff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .examples {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .examples h3 {
+            color: #007aff;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(0, 122, 255, 0.1);
+            padding-bottom: 12px;
+        }
+
+        .examples h3:first-of-type {
+            margin-top: 20px;
+        }
+
+        .example-item {
+            padding: 16px 24px;
+            margin: 12px 0;
+            background: rgba(0, 122, 255, 0.05);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+
+        .example-item:hover {
+            background: rgba(0, 122, 255, 0.1);
+            border-left-color: #007aff;
+            transform: translateX(8px);
+            box-shadow: 0 4px 20px rgba(0, 122, 255, 0.2);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .auth-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .auth-input {
+            width: 200px;
+            padding: 12px 16px;
+            margin: 0 10px;
+            border: 2px solid rgba(0, 122, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: #007aff;
+            box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+            background: white;
+        }
+
+        .schema-section {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .table-info {
+            background: rgba(0, 122, 255, 0.05);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 4px solid #007aff;
+            backdrop-filter: blur(10px);
+        }
+
+        .table-info h4 {
+            color: #007aff;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .table-info p {
+            margin: 8px 0;
+            font-size: 0.95rem;
+            color: #1d1d1f;
+            opacity: 0.8;
+        }
+
+        .table-info p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍎 NLP Query System</h1>
+            <p>讓 AI 將自然語言轉換為精準的 SQL 查詢，體驗蘋果級的智能資料庫分析</p>
+        </div>
+
+        <!-- Authentication Section -->
+        <div class="auth-section">
+            <label>認證資訊：</label>
+            <input type="text" id="username" class="auth-input" placeholder="用戶名" value="admin">
+            <input type="password" id="password" class="auth-input" placeholder="密碼" value="admin123">
+            <button onclick="testConnection()" class="btn">測試連接</button>
+        </div>
+
+        <!-- Query Section -->
+        <div class="query-section">
+            <h2>✨ 智慧查詢助手</h2>
+            <div class="form-group">
+                <label for="query">請以自然語言描述您想要查詢的內容：</label>
+                <textarea 
+                    id="query" 
+                    class="query-input" 
+                    placeholder="例如：顯示所有活躍用戶的詳細資訊、查詢庫存不足的產品..."
+                ></textarea>
+            </div>
+            <button onclick="executeQuery()" class="btn" id="queryBtn">🚀 開始智慧查詢</button>
+        </div>
+
+        <!-- SQL Display Section -->
+        <div class="sql-section">
+            <h2>⚡ AI 生成的 SQL 代碼</h2>
+            <div class="sql-controls">
+                <button onclick="toggleSqlDisplay()" class="btn btn-secondary" id="toggleSqlBtn">� 顯示 SQL 代碼</button>
+                <button onclick="copySql()" class="btn btn-success" id="copySqlBtn" style="display: none;">📋 複製代碼</button>
+                <button onclick="clearSqlDisplay()" class="btn btn-warning" id="clearSqlBtn" style="display: none;">🗑️ 清空代碼</button>
+            </div>
+            
+            <div id="sqlDisplay" class="sql-display-area" style="display: none;">
+                <label>� 智能生成的 SQL 查詢語句：</label>
+                <div id="sqlContent" class="sql-content">
+                    <div class="sql-placeholder">
+                        請先執行智慧查詢，這裡將自動顯示 AI 精心生成的 SQL 代碼 ✨
+                    </div>
+                </div>
+                <div class="sql-help">
+                    <small>💡 Apple 風格提示：這裡展示的是根據您的自然語言自動生成的精準 SQL 語句，體驗無縫的智能轉換</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section">
+            <h2>📊 查詢結果</h2>
+            <div id="queryResults"></div>
+        </div>
+
+        <!-- Database Schema Section -->
+        <div class="schema-section">
+            <h2>🗃️ 資料庫結構</h2>
+            <p>系統支援以下表格查詢：</p>
+            
+            <div class="table-info">
+                <h4>👥 users (用戶表)</h4>
+                <p><strong>欄位：</strong>id, name, email, age, status, created_at</p>
+                <p><strong>說明：</strong>儲存用戶基本資訊，包含姓名、郵箱、年齡、狀態等</p>
+            </div>
+
+            <div class="table-info">
+                <h4>📦 products (產品表)</h4>
+                <p><strong>欄位：</strong>id, name, price, stock_quantity, category, created_at</p>
+                <p><strong>說明：</strong>產品資訊，包含名稱、價格、庫存數量、分類等</p>
+            </div>
+
+            <div class="table-info">
+                <h4>🛒 orders (訂單表)</h4>
+                <p><strong>欄位：</strong>id, user_id, product_id, quantity, total_amount, status, order_date</p>
+                <p><strong>說明：</strong>訂單記錄，包含用戶ID、產品ID、數量、總金額、狀態等</p>
+            </div>
+
+            <div class="table-info">
+                <h4>📝 ai_query_log (查詢日誌表)</h4>
+                <p><strong>欄位：</strong>id, query_text, sql_query, execution_time, created_at</p>
+                <p><strong>說明：</strong>AI查詢歷史記錄，包含查詢文本、生成的SQL等</p>
+            </div>
+        </div>
+
+        <!-- Examples Section -->
+        <div class="examples">
+            <h2>💡 查詢範例</h2>
+            <p>點擊以下範例可快速填入查詢框：</p>
+            
+            <h3>👥 用戶表 (users) 查詢範例</h3>
+            <div class="example-item" onclick="setQuery('顯示所有活躍用戶')">
+                🔸 顯示所有活躍用戶
+            </div>
+            <div class="example-item" onclick="setQuery('查詢年齡大於25歲的用戶')">
+                🔸 查詢年齡大於25歲的用戶
+            </div>
+            <div class="example-item" onclick="setQuery('找出最近註冊的5個用戶')">
+                🔸 找出最近註冊的5個用戶
+            </div>
+            <div class="example-item" onclick="setQuery('查詢用戶的姓名和電子郵件')">
+                🔸 查詢用戶的姓名和電子郵件
+            </div>
+
+            <h3>📦 產品表 (products) 查詢範例</h3>
+            <div class="example-item" onclick="setQuery('顯示所有產品資訊')">
+                🔸 顯示所有產品資訊
+            </div>
+            <div class="example-item" onclick="setQuery('查詢價格低於500的產品')">
+                🔸 查詢價格低於500的產品
+            </div>
+            <div class="example-item" onclick="setQuery('找出庫存不足10件的產品')">
+                🔸 找出庫存不足10件的產品
+            </div>
+            <div class="example-item" onclick="setQuery('按價格從高到低排序產品')">
+                🔸 按價格從高到低排序產品
+            </div>
+
+            <h3>🛒 訂單表 (orders) 查詢範例</h3>
+            <div class="example-item" onclick="setQuery('顯示所有訂單')">
+                🔸 顯示所有訂單
+            </div>
+            <div class="example-item" onclick="setQuery('查詢已完成的訂單')">
+                🔸 查詢已完成的訂單
+            </div>
+            <div class="example-item" onclick="setQuery('找出總金額超過1000的訂單')">
+                🔸 找出總金額超過1000的訂單
+            </div>
+            <div class="example-item" onclick="setQuery('查詢今天的訂單數量')">
+                🔸 查詢今天的訂單數量
+            </div>
+
+            <h3>📊 統計查詢範例</h3>
+            <div class="example-item" onclick="setQuery('統計每個用戶的訂單數量')">
+                🔸 統計每個用戶的訂單數量
+            </div>
+            <div class="example-item" onclick="setQuery('計算所有訂單的總金額')">
+                🔸 計算所有訂單的總金額
+            </div>
+            <div class="example-item" onclick="setQuery('查詢最受歡迎的產品')">
+                🔸 查詢最受歡迎的產品
+            </div>
+            <div class="example-item" onclick="setQuery('統計不同狀態的用戶數量')">
+                🔸 統計不同狀態的用戶數量
+            </div>
+
+            <h3>🔍 複雜查詢範例</h3>
+            <div class="example-item" onclick="setQuery('查詢購買過特定產品的用戶')">
+                🔸 查詢購買過特定產品的用戶
+            </div>
+            <div class="example-item" onclick="setQuery('找出沒有下過訂單的用戶')">
+                🔸 找出沒有下過訂單的用戶
+            </div>
+            <div class="example-item" onclick="setQuery('查詢每月的銷售統計')">
+                🔸 查詢每月的銷售統計
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080/api';
+        let authHeader = '';
+
+        function updateAuthHeader() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            authHeader = 'Basic ' + btoa(username + ':' + password);
+        }
+
+        async function testConnection() {
+            updateAuthHeader();
+            try {
+                const response = await fetch(`${API_BASE}/v1/ai/schema`, {
+                    headers: {
+                        'Authorization': authHeader,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert('連接成功！\n\n' + data.schema.substring(0, 200) + '...');
+                } else {
+                    alert('連接失敗：' + response.status + ' ' + response.statusText);
+                }
+            } catch (error) {
+                alert('連接錯誤：' + error.message);
+            }
+        }
+
+        function setQuery(query) {
+            document.getElementById('query').value = query;
+        }
+
+        function toggleSqlDisplay() {
+            const sqlDisplay = document.getElementById('sqlDisplay');
+            const toggleBtn = document.getElementById('toggleSqlBtn');
+            const copySqlBtn = document.getElementById('copySqlBtn');
+            const clearSqlBtn = document.getElementById('clearSqlBtn');
+            
+            if (sqlDisplay.style.display === 'none') {
+                sqlDisplay.style.display = 'block';
+                toggleBtn.textContent = '📦 隱藏 SQL 語句';
+                copySqlBtn.style.display = 'inline-block';
+                clearSqlBtn.style.display = 'inline-block';
+            } else {
+                sqlDisplay.style.display = 'none';
+                toggleBtn.textContent = '📝 顯示 SQL 語句';
+                copySqlBtn.style.display = 'none';
+                clearSqlBtn.style.display = 'none';
+            }
+        }
+
+        function clearSqlDisplay() {
+            const sqlContent = document.getElementById('sqlContent');
+            sqlContent.innerHTML = '<div class="sql-placeholder">請先執行自然語言查詢，這裡將顯示 AI 生成的 SQL 語句</div>';
+            sqlContent.className = 'sql-content';
+        }
+
+        function setSqlDisplay(sql) {
+            const sqlContent = document.getElementById('sqlContent');
+            sqlContent.textContent = sql;
+            sqlContent.className = 'sql-content sql-generated';
+            
+            // 自動顯示SQL區域
+            const sqlDisplay = document.getElementById('sqlDisplay');
+            if (sqlDisplay.style.display === 'none') {
+                toggleSqlDisplay();
+            }
+        }
+
+        function copySql() {
+            const sqlContent = document.getElementById('sqlContent');
+            const sqlText = sqlContent.textContent;
+            
+            if (sqlText && !sqlText.includes('請先執行自然語言查詢')) {
+                navigator.clipboard.writeText(sqlText).then(() => {
+                    // 臨時改變按鈕文字以顯示複製成功
+                    const copySqlBtn = document.getElementById('copySqlBtn');
+                    const originalText = copySqlBtn.textContent;
+                    copySqlBtn.textContent = '✅ 已複製';
+                    setTimeout(() => {
+                        copySqlBtn.textContent = originalText;
+                    }, 2000);
+                }).catch(() => {
+                    alert('複製失敗，請手動選擇文字複製');
+                });
+            } else {
+                alert('沒有可複製的 SQL 語句');
+            }
+        }
+
+        async function executeQuery() {
+            updateAuthHeader();
+            const query = document.getElementById('query').value.trim();
+            
+            if (!query) {
+                alert('請輸入查詢內容');
+                return;
+            }
+
+            const queryBtn = document.getElementById('queryBtn');
+            const resultsDiv = document.getElementById('results');
+            const resultsContent = document.getElementById('queryResults');
+
+            // Show loading state
+            queryBtn.disabled = true;
+            queryBtn.textContent = '⏳ 處理中...';
+            resultsDiv.style.display = 'block';
+            resultsContent.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>AI 正在分析您的查詢並生成 SQL...</p>
+                </div>
+            `;
+
+            try {
+                const response = await fetch(`${API_BASE}/v1/ai/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': authHeader,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        query: query,
+                        needChart: true,
+                        limit: 100
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data);
+                    // 自動將生成的SQL顯示在SQL區域
+                    if (data.sql) {
+                        setSqlDisplay(data.sql);
+                    }
+                } else {
+                    displayError(data.errorMessage || '查詢失敗');
+                }
+            } catch (error) {
+                displayError('網路錯誤：' + error.message);
+            } finally {
+                queryBtn.disabled = false;
+                queryBtn.textContent = '🚀 執行查詢';
+            }
+        }
+
+        function displayResults(data) {
+            const resultsContent = document.getElementById('queryResults');
+            
+            let html = `
+                <div class="success">
+                    ✅ 查詢執行成功！找到 ${data.resultCount} 筆記錄，耗時 ${data.executionTime}ms
+                </div>
+                
+                <h3>🔧 生成的 SQL：</h3>
+                <div class="sql-display">${data.sql}</div>
+            `;
+
+            if (data.tableData && data.tableData.length > 0) {
+                html += `<h3>📋 查詢結果：</h3>`;
+                html += generateTable(data.columns, data.tableData);
+            } else {
+                html += `<p>沒有找到符合條件的記錄。</p>`;
+            }
+
+            resultsContent.innerHTML = html;
+        }
+
+        function displayError(errorMessage) {
+            const resultsContent = document.getElementById('queryResults');
+            resultsContent.innerHTML = `
+                <div class="error">
+                    ❌ 查詢失敗：${errorMessage}
+                </div>
+            `;
+        }
+
+        function generateTable(columns, data) {
+            if (!columns || !data || data.length === 0) {
+                return '<p>沒有數據可顯示</p>';
+            }
+
+            let html = '<table class="data-table"><thead><tr>';
+            
+            // Table headers
+            columns.forEach(column => {
+                html += `<th>${column}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+
+            // Table rows
+            data.forEach(row => {
+                html += '<tr>';
+                columns.forEach(column => {
+                    const value = row[column];
+                    const displayValue = value === null || value === undefined ? '-' : value;
+                    html += `<td>${displayValue}</td>`;
+                });
+                html += '</tr>';
+            });
+
+            html += '</tbody></table>';
+            return html;
+        }
+
+        // Initialize auth header on page load
+        updateAuthHeader();
+    </script>
+</body>
+</html>

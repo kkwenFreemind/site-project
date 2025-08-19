@@ -1,0 +1,11 @@
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\service\GeminiApiClient.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\config\SecurityConfig.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\dto\AiQueryResponse.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\repository\AiQueryLogRepository.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\service\DataDictionaryService.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\controller\AiQueryController.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\service\AiQueryService.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\config\AiQueryConfig.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\dto\AiQueryRequest.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\entity\AiQueryLog.java
+D:\myCredit\side-project\nlp-system\nlp-system\backend\src\main\java\com\nlpquery\NlpQuerySystemApplication.java

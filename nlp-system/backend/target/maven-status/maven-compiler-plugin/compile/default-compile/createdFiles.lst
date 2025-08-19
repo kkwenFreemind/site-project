@@ -1,0 +1,12 @@
+com\nlpquery\config\AiQueryConfig.class
+com\nlpquery\repository\AiQueryLogRepository.class
+com\nlpquery\NlpQuerySystemApplication.class
+com\nlpquery\service\AiQueryService.class
+com\nlpquery\dto\AiQueryResponse$AiQueryResponseBuilder.class
+com\nlpquery\dto\AiQueryResponse.class
+com\nlpquery\config\SecurityConfig.class
+com\nlpquery\service\DataDictionaryService.class
+com\nlpquery\entity\AiQueryLog.class
+com\nlpquery\controller\AiQueryController.class
+com\nlpquery\service\GeminiApiClient.class
+com\nlpquery\dto\AiQueryRequest.class

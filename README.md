@@ -14,6 +14,17 @@ This directory contains multiple sub-projects. Each project folder has its own d
 - 包含法律資料解析、向量化、API 服務、前端展示等功能。
 - 詳細介紹請參見 `rag-system/README.md`。
 
+## nlp-system
+- Natural language to SQL query system based on Spring Boot and Google Gemini AI.
+- Converts Chinese natural language to PostgreSQL queries and executes them safely.
+- Features: NL2SQL conversion, security validation, query logging, chart generation, web interface.
+- For details, see `nlp-system/README.md`.
+
+- 基於 Spring Boot 和 Google Gemini AI 的自然語言轉 SQL 查詢系統。
+- 將中文自然語言轉換為 PostgreSQL 查詢並安全執行。
+- 功能包含：自然語言轉SQL、安全驗證、查詢記錄、圖表生成、Web界面。
+- 詳細介紹請參見 `nlp-system/README.md`。
+
 ---
 
 For more information about a specific project, please enter its directory and refer to its README file.

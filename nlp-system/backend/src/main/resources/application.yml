@@ -1,0 +1,77 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: nlp-query-system
+    
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15432/nlpdb
+    username: nlpuser
+    password: nlppassword
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      auto-commit: true
+      pool-name: HikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+    
+  security:
+    user:
+      name: admin
+      password: admin123
+      roles: ADMIN
+
+# AI Configuration
+ai:
+  gemini:
+    # Gemini API 金鑰
+    api-key: 
+    # Gemini API 基礎URL
+    base-url: https://generativelanguage.googleapis.com
+    # 模型名稱
+    model: gemini-1.5-flash
+    # 連接超時時間(秒)
+    timeout: 30
+    # 最大重試次數
+    max-retries: 3
+    # 是否記錄查詢日誌
+    log-queries: true
+
+# Logging
+logging:
+  level:
+    com.nlpquery: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  pattern:
+    file: "%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
