@@ -43,7 +43,7 @@ spring:
 ai:
   gemini:
     # Gemini API 金鑰
-    api-key: 
+    api-key: your-gemini-api-key-here
     # Gemini API 基礎URL
     base-url: https://generativelanguage.googleapis.com
     # 模型名稱
