@@ -1,0 +1,114 @@
+version: '3.8'
+
+services:
+  emqx:
+    image: emqx/emqx:5.0.0
+    container_name: emqx
+    restart: unless-stopped
+    ports:
+      # MQTT TCP Port
+      - "1883:1883"
+      # MQTT SSL Port
+      - "8883:8883"
+      # MQTT over WebSocket Port
+      - "8083:8083"
+      # MQTT over WebSocket SSL Port
+      - "8084:8084"
+      # HTTP Management API Port
+      - "8081:8081"
+      # EMQX Dashboard Port
+      - "18083:18083"
+    environment:
+      # 基本設定
+      - EMQX_NAME=emqx
+      - EMQX_HOST=127.0.0.1
+      
+      # 認證設定
+      - EMQX_DASHBOARD__DEFAULT_USERNAME=admin
+      - EMQX_DASHBOARD__DEFAULT_PASSWORD=Admin+12345678
+      
+      # 節點設定
+      - EMQX_NODE__NAME=emqx@127.0.0.1
+      - EMQX_NODE__COOKIE=emqxsecretcookie
+      
+      # 日誌設定
+      - EMQX_LOG__CONSOLE_HANDLER__ENABLE=true
+      - EMQX_LOG__CONSOLE_HANDLER__LEVEL=info
+      
+      # 監聽器設定
+      - EMQX_LISTENERS__TCP__DEFAULT__BIND=1883
+      - EMQX_LISTENERS__SSL__DEFAULT__BIND=8883
+      - EMQX_LISTENERS__WS__DEFAULT__BIND=8083
+      - EMQX_LISTENERS__WSS__DEFAULT__BIND=8084
+      
+      # 允許匿名連接 (開發環境用)
+      - EMQX_AUTHENTICATION__1__MECHANISM=password_based
+      - EMQX_AUTHENTICATION__1__BACKEND=built_in_database
+      - EMQX_AUTHENTICATION__1__USER_ID_TYPE=username
+      
+      # 時區設定
+      - TZ=Asia/Taipei
+      
+    volumes:
+      # 持久化數據
+      - emqx_data:/opt/emqx/data
+      - emqx_log:/opt/emqx/log
+      - emqx_etc:/opt/emqx/etc
+      
+      # 如果需要自定義配置檔案，可以掛載
+      # - ./emqx.conf:/opt/emqx/etc/emqx.conf
+      
+    healthcheck:
+      test: ["CMD", "/opt/emqx/bin/emqx", "ctl", "status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+      
+    # 網路設定
+    networks:
+      - cctv-net
+
+  # 可選：EMQX 叢集節點 (如果需要高可用性)
+  # emqx2:
+  #   image: emqx/emqx:5.0.0
+  #   container_name: emqx2
+  #   restart: unless-stopped
+  #   ports:
+  #     - "1884:1883"
+  #     - "8084:8083"
+  #     - "18084:18083"
+  #   environment:
+  #     - EMQX_NAME=emqx
+  #     - EMQX_HOST=127.0.0.1
+  #     - EMQX_NODE__NAME=emqx2@127.0.0.1
+  #     - EMQX_NODE__COOKIE=emqxsecretcookie
+  #     - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+  #     - EMQX_CLUSTER__STATIC__SEEDS=emqx@127.0.0.1
+  #     - TZ=Asia/Taipei
+  #   volumes:
+  #     - emqx2_data:/opt/emqx/data
+  #     - emqx2_log:/opt/emqx/log
+  #     - emqx2_etc:/opt/emqx/etc
+  #   depends_on:
+  #     - emqx
+  #   networks:
+  #     - emqx-network
+
+volumes:
+  emqx_data:
+    driver: local
+  emqx_log:
+    driver: local
+  emqx_etc:
+    driver: local
+  # emqx2_data:
+  #   driver: local
+  # emqx2_log:
+  #   driver: local
+  # emqx2_etc:
+  #   driver: local
+
+networks:
+  cctv-net:
+    external: true

@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      # 基本設定
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=Admin+12345678
+      
+      # 資料庫設定（可選，預設使用SQLite）
+      # - DB_TYPE=postgresdb
+      # - DB_POSTGRESDB_DATABASE=n8n
+      # - DB_POSTGRESDB_HOST=postgres
+      # - DB_POSTGRESDB_USER=n8n
+      # - DB_POSTGRESDB_PASSWORD=n8n_password
+      
+      # 其他設定
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      
+      # 時區設定
+      - TZ=Asia/Taipei
+      
+      # Webhook URL（如果需要外部存取）
+      # - WEBHOOK_URL=https://your-domain.com/
+      
+    volumes:
+      # 持久化資料
+      - n8n_data:/home/node/.n8n
+      
+      # 如果需要存取本機檔案
+      # - /path/to/local/files:/files
+    
+    # 如果使用PostgreSQL
+    # depends_on:
+    #   - postgres
+
+  # PostgreSQL 資料庫（可選）
+  # postgres:
+  #   image: postgres:13
+  #   container_name: n8n_postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     - POSTGRES_DB=n8n
+  #     - POSTGRES_USER=n8n
+  #     - POSTGRES_PASSWORD=n8n_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  n8n_data:
+    driver: local
+  # postgres_data:
+  #   driver: local
