@@ -2,6 +2,7 @@ package com.alertsystem.config;
 
 import com.alertsystem.security.JwtAuthenticationEntryPoint;
 import com.alertsystem.security.JwtAuthenticationFilter;
+import com.alertsystem.security.DynamicPermissionFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +33,7 @@ public class SecurityConfig {
     private final UserDetailsService userDetailsService;
     private final JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final DynamicPermissionFilter dynamicPermissionFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -58,18 +60,21 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .exceptionHandling(exception -> exception.authenticationEntryPoint(jwtAuthenticationEntryPoint))
             .authorizeHttpRequests(auth -> auth
-                // 公開端點
-                .requestMatchers("/auth/login", "/auth/register").permitAll()
+                // 靜態資源和系統端點
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                 .requestMatchers("/actuator/health").permitAll()
-                // 管理員端點
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                // 其他端點需要認證
+                .requestMatchers("/favicon.ico").permitAll()
+                // 公開API端點 - 為了與動態權限系統配合，這裡只配置認證相關的基礎API
+                .requestMatchers("/auth/login", "/auth/register", "/auth/refresh").permitAll()
+                // 所有其他端點都需要認證，具體權限由動態權限過濾器控制
                 .anyRequest().authenticated()
             );
 
         http.authenticationProvider(authenticationProvider());
+        // 先添加JWT過濾器在UsernamePasswordAuthenticationFilter之前
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        // 然後添加動態權限過濾器在JWT過濾器之後，但在授權過濾器之前
+        http.addFilterAfter(dynamicPermissionFilter, JwtAuthenticationFilter.class);
 
         return http.build();
     }
